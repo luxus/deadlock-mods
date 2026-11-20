@@ -1,0 +1,18 @@
+{
+  "id": "deadlock-commend",
+  "title": "Deadlock Commend",
+  "availability": "unavailable",
+  "isNsfw": false,
+  "description": "Post-game buttons to commend your team, the enemy, everyone, or to return commends. One \"Commend buttons\" toggle in settings.\n\nA test build exists in [luxus/deadlock-commend](https://github.com/luxus/deadlock-commend). There is no release and no download here yet.",
+  "descriptionFormat": "markdown",
+  "author": "luxus",
+  "homepageUrl": "https://github.com/luxus/deadlock-commend",
+  "contentType": "hud",
+  "tags": [
+    "hud",
+    "commend",
+    "post-game",
+    "complock",
+    "hudpp"
+  ]
+}

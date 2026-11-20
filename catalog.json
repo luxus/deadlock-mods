@@ -1,0 +1,19 @@
+{
+  "snapshotId": "2026-11-20-1",
+  "items": [
+    {
+      "id": "improved-quickbuy",
+      "title": "Improved Quickbuy",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./mods/improved-quickbuy.json"
+    },
+    {
+      "id": "deadlock-commend",
+      "title": "Deadlock Commend",
+      "availability": "unavailable",
+      "isNsfw": false,
+      "detailUrl": "./mods/deadlock-commend.json"
+    }
+  ]
+}
