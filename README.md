@@ -17,8 +17,9 @@ Or use the "Add to DMM" button on the [catalog page](https://luxus.github.io/dea
 | [Improved Quickbuy](https://github.com/luxus/improved-quickbuy) 1.0.3 | available (GitHub Release asset) |
 | [Deadlock Commend](https://github.com/luxus/deadlock-commend) 1.0.0 | available (GitHub Release asset) |
 | [Deadlock Profile Links](https://github.com/luxus/deadlock-profile-links) 1.0.1 | available (GitHub Release asset) |
+| [Thicker Outlines (Vulkan)](https://deadlockconfig.com/) 1.0 (HoppCX; third-party) | available (GitHub Release asset) |
 
-The VPKs are the GitHub Release assets of each mod.
+The VPKs are the GitHub Release assets of each mod. Thicker Outlines (Vulkan) is a third-party CompLock part by HoppCX, redistributed unchanged because the Pack Builder no longer lists it.
 
 The earlier Improved Quickbuy-only source at `https://luxus.github.io/improved-quickbuy/dmm-source.json` stays as it is. It uses the same `sourceId` (`luxus`) on the same origin (`https://luxus.github.io`). Adding both sources in DMM can clash; prefer this catalog going forward if you want every luxus listing in one place.
 

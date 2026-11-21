@@ -1,5 +1,5 @@
 {
-  "snapshotId": "2026-11-21-5",
+  "snapshotId": "2026-11-21-6",
   "items": [
     {
       "id": "improved-quickbuy",
@@ -21,6 +21,13 @@
       "availability": "available",
       "isNsfw": false,
       "detailUrl": "./mods/deadlock-profile-links.json"
+    },
+    {
+      "id": "thicker-outlines",
+      "title": "Thicker Outlines (Vulkan)",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./mods/thicker-outlines.json"
     }
   ]
 }
