@@ -16,7 +16,7 @@ Or use the "Add to DMM" button on the [catalog page](https://luxus.github.io/dea
 | --- | --- |
 | [Improved Quickbuy](https://github.com/luxus/improved-quickbuy) 1.0.3 | available (GitHub Release asset) |
 | [Deadlock Commend](https://github.com/luxus/deadlock-commend) 1.0.0 | available (GitHub Release asset) |
-| [Deadlock Profile Links](https://github.com/luxus/deadlock-profile-links) 1.0.0 | available (GitHub Release asset) |
+| [Deadlock Profile Links](https://github.com/luxus/deadlock-profile-links) 1.0.1 | available (GitHub Release asset) |
 
 The VPKs are the GitHub Release assets of each mod.
 
