@@ -26,7 +26,7 @@ The earlier Improved Quickbuy-only source at `https://luxus.github.io/improved-q
 - `dmm-source.json` — source descriptor (`protocolVersion` 1.0, `sourceId` luxus)
 - `catalog.json` — index
 - `mods/*.json` — listing details
-- GitHub Pages serves the repository root
+- GitHub Pages serves the repository root from the `main` branch
 
 ## License
 
