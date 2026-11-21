@@ -1,5 +1,5 @@
 {
-  "snapshotId": "2026-11-21-3",
+  "snapshotId": "2026-11-21-4",
   "items": [
     {
       "id": "improved-quickbuy",
@@ -11,9 +11,16 @@
     {
       "id": "deadlock-commend",
       "title": "Deadlock Commend",
-      "availability": "unavailable",
+      "availability": "available",
       "isNsfw": false,
       "detailUrl": "./mods/deadlock-commend.json"
+    },
+    {
+      "id": "deadlock-profile-links",
+      "title": "Deadlock Profile Links",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./mods/deadlock-profile-links.json"
     }
   ]
 }
