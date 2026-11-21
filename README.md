@@ -14,10 +14,10 @@ Or use the "Add to DMM" button on the [catalog page](https://luxus.github.io/dea
 
 | Mod | Status |
 | --- | --- |
-| [Improved Quickbuy](https://github.com/luxus/improved-quickbuy) 1.0.0 | available (GitHub Release asset) |
+| [Improved Quickbuy](https://github.com/luxus/improved-quickbuy) 1.0.1 | available (GitHub Release asset) |
 | [Deadlock Commend](https://github.com/luxus/deadlock-commend) | unavailable (test build only, no release) |
 
-The Improved Quickbuy 1.0.0 VPK is the existing release asset. Deadlock Commend has no artifact in this catalog.
+The Improved Quickbuy 1.0.1 VPK is the existing release asset. Deadlock Commend has no artifact in this catalog.
 
 The earlier Improved Quickbuy-only source at `https://luxus.github.io/improved-quickbuy/dmm-source.json` stays as it is. It uses the same `sourceId` (`luxus`) on the same origin (`https://luxus.github.io`). Adding both sources in DMM can clash; prefer this catalog going forward if you want every luxus listing in one place.
 
