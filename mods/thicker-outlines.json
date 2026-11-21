@@ -1,0 +1,39 @@
+{
+  "id": "thicker-outlines",
+  "title": "Thicker Outlines (Vulkan)",
+  "availability": "available",
+  "isNsfw": false,
+  "description": "Third-party CompLock part by [HoppCX](https://deadlockconfig.com/). Not authored by luxus.\n\nThicker hero and unit outlines (Vulkan). Originally part of [CompLock](https://deadlockconfig.com/) by jcStani and HoppCX, and distributed through the Pack Builder. The Pack Builder no longer lists this part; this is an unchanged copy of the VPK.\n\n- Author: HoppCX\n- Original page: [deadlockconfig.com](https://deadlockconfig.com/)\n- Addon title in the VPK: Thicker outlines (Vulkan) - HoppCX\n- Addon version 1.0\n",
+  "descriptionFormat": "markdown",
+  "author": "HoppCX",
+  "homepageUrl": "https://deadlockconfig.com/",
+  "contentType": "hud",
+  "tags": [
+    "hud",
+    "outlines",
+    "complock",
+    "third-party"
+  ],
+  "release": {
+    "id": "1.0",
+    "contentRevision": "sha256-e02921b04f660c9c",
+    "version": "1.0",
+    "artifacts": [
+      {
+        "id": "thicker-outlines-vpk",
+        "filename": "thicker-outlines-vulkan.vpk",
+        "format": "vpk",
+        "download": {
+          "url": "https://github.com/luxus/deadlock-mods/releases/download/thicker-outlines-1.0/thicker-outlines-vulkan.vpk"
+        },
+        "size": 7077,
+        "hashes": {
+          "sha256": "e02921b04f660c9c2eb4b0a1655955315c669d2f785a2d9561a7f41d90813abf"
+        }
+      }
+    ],
+    "installation": {
+      "mode": "manual"
+    }
+  }
+}
