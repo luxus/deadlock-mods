@@ -6,7 +6,7 @@
   "description": "Rank badge and buttons for [Statlocker](https://statlocker.gg/) and [DeadChaps](https://www.deadchaps.gg/) on profile pages, profile cards and the post-game scoreboard.\n\n- Rank badge from the public Deadlock API\n- Buttons that open the player's Statlocker and DeadChaps pages\n- On the post-game scoreboard the logos sit in a slot after each player's stats row, next to the name\n- One \"Profile links\" toggle in settings (on by default)\n- A \"Profile Links\" tab in [CompLock HUD++](https://deadlockconfig.com/), or an ADDONS window in the Esc menu without HUD++\n- \"Reset Profile Links\" on the right of the settings foot puts the toggle back to the default\n- Toggle descriptions appear as a tooltip on hover, like HUD++'s own rows\n- Written from scratch; contains no code from the previous Profile Links pak",
   "descriptionFormat": "markdown",
   "author": "luxus",
-  "homepageUrl": "https://luxus.github.io/deadlock-profile-links/",
+  "homepageUrl": "https://github.com/luxus/deadlock-qol-mods/tree/main/paks/profile-links",
   "contentType": "hud",
   "tags": [
     "hud",
@@ -17,20 +17,20 @@
     "hudpp"
   ],
   "release": {
-    "id": "1.0.1",
-    "contentRevision": "sha256-65a160bdbf30f340",
-    "version": "1.0.1",
+    "id": "2.0.0",
+    "contentRevision": "sha256-fc5fcff03246d52b",
+    "version": "2.0.0",
     "artifacts": [
       {
         "id": "deadlock-profile-links-vpk",
-        "filename": "deadlock-profile-links-1.0.1.vpk",
+        "filename": "deadlock-profile-links-2.0.0.vpk",
         "format": "vpk",
         "download": {
-          "url": "https://github.com/luxus/deadlock-profile-links/releases/download/v1.0.1/deadlock-profile-links-1.0.1.vpk"
+          "url": "https://github.com/luxus/deadlock-qol-mods/releases/download/profile-links-v2.0.0/deadlock-profile-links-2.0.0.vpk"
         },
-        "size": 154309,
+        "size": 270698,
         "hashes": {
-          "sha256": "65a160bdbf30f340d2987b03282d366929e9664adb388bfb1ce9f215e01231ca"
+          "sha256": "fc5fcff03246d52bf98e0d6c0a9cc64cd3d22053696769e719b51d513f9c4ba5"
         }
       }
     ],
