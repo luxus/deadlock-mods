@@ -1,5 +1,5 @@
 {
-  "snapshotId": "2026-11-23-1",
+  "snapshotId": "2026-11-23-2",
   "items": [
     {
       "id": "improved-quickbuy",
@@ -35,6 +35,13 @@
       "availability": "available",
       "isNsfw": false,
       "detailUrl": "./mods/lobby-ranks.json"
+    },
+    {
+      "id": "zipline-boost",
+      "title": "Deadlock Zipline Boost",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./mods/zipline-boost.json"
     }
   ]
 }
