@@ -1,0 +1,40 @@
+{
+  "id": "zipline-boost",
+  "title": "Deadlock Zipline Boost",
+  "availability": "available",
+  "isNsfw": false,
+  "description": "An always-visible Ready / Active / Cooldown timer for the zipline speed boost.\n\n- Icon with title and state, bottom centre-left above the HUD; hidden in the hideout\n- Sits next to [CompLock HUD++](https://deadlockconfig.com/) without overriding hud.xml\n- A \"Zipline Boost\" tab in HUD++, or an ADDONS window in the Esc menu without HUD++; one toggle, on by default\n- MIT. The overlay look is adapted from the Zip Boost overlay in [QOLLOCK](https://github.com/civo7/QOLLOCK) by civo7 (Apache-2.0)",
+  "descriptionFormat": "markdown",
+  "author": "luxus",
+  "homepageUrl": "https://github.com/luxus/deadlock-qol-mods/tree/main/paks/zipline-boost",
+  "contentType": "hud",
+  "tags": [
+    "hud",
+    "zipline",
+    "movement",
+    "complock",
+    "hudpp"
+  ],
+  "release": {
+    "id": "0.1.0",
+    "contentRevision": "sha256-4358511fc0d284f9",
+    "version": "0.1.0",
+    "artifacts": [
+      {
+        "id": "zipline-boost-vpk",
+        "filename": "deadlock-zipline-boost-0.1.0.vpk",
+        "format": "vpk",
+        "download": {
+          "url": "https://github.com/luxus/deadlock-qol-mods/releases/download/zipline-boost-v0.1.0/deadlock-zipline-boost-0.1.0.vpk"
+        },
+        "size": 100690,
+        "hashes": {
+          "sha256": "4358511fc0d284f9361c97ab59ade3e1f7c2ff8f98b3e996ea93e033811b028c"
+        }
+      }
+    ],
+    "installation": {
+      "mode": "manual"
+    }
+  }
+}
