@@ -6,7 +6,7 @@
   "description": "Post-game buttons to commend your team, the enemy, everyone, or to return commends.\n\n- Four buttons on the Team, Scoreboard and MVP post-game screens: Team, Enemy, All, Return\n- One \"Commend buttons\" toggle in settings (on by default)\n- A \"Commend\" tab in [CompLock HUD++](https://deadlockconfig.com/), or an ADDONS window in the Esc menu without HUD++\n- \"Reset Commend\" on the right of the settings foot puts the toggle back to the default\n- Toggle descriptions appear as a tooltip on hover, like HUD++'s own rows\n- Written from scratch; contains no code or assets from other commend mods",
   "descriptionFormat": "markdown",
   "author": "luxus",
-  "homepageUrl": "https://luxus.github.io/deadlock-commend/",
+  "homepageUrl": "https://github.com/luxus/deadlock-qol-mods/tree/main/paks/commend",
   "contentType": "hud",
   "tags": [
     "hud",
@@ -16,20 +16,20 @@
     "hudpp"
   ],
   "release": {
-    "id": "1.0.0",
-    "contentRevision": "sha256-14d7678cb03eef0e",
-    "version": "1.0.0",
+    "id": "2.0.0",
+    "contentRevision": "sha256-91e08bf58095b00b",
+    "version": "2.0.0",
     "artifacts": [
       {
         "id": "deadlock-commend-vpk",
-        "filename": "deadlock-commend-1.0.0.vpk",
+        "filename": "deadlock-commend-2.0.0.vpk",
         "format": "vpk",
         "download": {
-          "url": "https://github.com/luxus/deadlock-commend/releases/download/v1.0.0/deadlock-commend-1.0.0.vpk"
+          "url": "https://github.com/luxus/deadlock-qol-mods/releases/download/commend-v2.0.0/deadlock-commend-2.0.0.vpk"
         },
-        "size": 100774,
+        "size": 222381,
         "hashes": {
-          "sha256": "14d7678cb03eef0e89706372fdc5f2ccbb1779fbc9441871685858733260b001"
+          "sha256": "91e08bf58095b00be95c9eba111398ec2b4a80476e3614c2b8002c6913365554"
         }
       }
     ],
