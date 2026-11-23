@@ -14,7 +14,7 @@ Or use the "Add to DMM" button on the [catalog page](https://luxus.github.io/dea
 
 | Mod | Status |
 | --- | --- |
-| [Improved Quickbuy](https://github.com/luxus/improved-quickbuy) 1.0.3 | available (GitHub Release asset) |
+| [Improved Quickbuy](https://github.com/luxus/improved-quickbuy) 1.0.4 | available (GitHub Release asset) |
 | [Deadlock Commend](https://github.com/luxus/deadlock-commend) 1.0.0 | available (GitHub Release asset) |
 | [Deadlock Profile Links](https://github.com/luxus/deadlock-profile-links) 1.0.1 | available (GitHub Release asset) |
 | [Deadlock Lobby Ranks](https://github.com/luxus/deadlock-qol-mods/tree/main/paks/lobby-ranks) 0.2.1 | available (GitHub Release asset: zip with both paks) |
