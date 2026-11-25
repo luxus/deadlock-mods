@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": "2.0.1",
+      "contentRevision": "sha256-681cb4ae5b1341ba",
+      "version": "2.0.1",
+      "publishedAt": "2026-11-25",
+      "changelog": "### Changed\n\n- The vendored Addon Settings library moves from 1.2.3 (`BUILD` 9) to 1.2.6 (`BUILD` 13): the ADDONS\n  list grows to 880 px before it scrolls (1.2.4), multi-layout registrations work (1.2.5), and the\n  Activated bubble recursion and the alias-unset-on-takeover are fixed (1.2.6)."
+    },
+    {
+      "id": "2.0.0",
+      "contentRevision": "sha256-91e08bf58095b00b",
+      "version": "2.0.0",
+      "publishedAt": "2026-11-23",
+      "changelog": "- The mod as it moved into this repository: post-game commend buttons on the Team, Scoreboard and MVP\n  screens, a settings tab in CompLock HUD++ or the ADDONS window, and localization.\n- Earlier history is in the [deadlock-qol-mods repository](https://github.com/luxus/deadlock-qol-mods)."
+    }
+  ],
+  "nextCursor": null
+}

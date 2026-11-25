@@ -1,5 +1,5 @@
 {
-  "snapshotId": "2026-11-25-9",
+  "snapshotId": "2026-11-25-10",
   "items": [
     {
       "id": "improved-quickbuy",
@@ -44,18 +44,18 @@
       "detailUrl": "./listings/no-music-low-gun-volume.json"
     },
     {
-      "id": "lobby-ranks",
+      "id": "deadlock-lobby-ranks",
       "title": "Deadlock Lobby Ranks",
       "availability": "available",
       "isNsfw": false,
-      "detailUrl": "./listings/lobby-ranks.json"
+      "detailUrl": "./listings/deadlock-lobby-ranks.json"
     },
     {
-      "id": "zipline-boost",
+      "id": "deadlock-zipline-boost",
       "title": "Deadlock Zipline Boost",
       "availability": "available",
       "isNsfw": false,
-      "detailUrl": "./listings/zipline-boost.json"
+      "detailUrl": "./listings/deadlock-zipline-boost.json"
     }
   ]
 }

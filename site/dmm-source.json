@@ -8,6 +8,9 @@
     "kind": "static",
     "indexUrl": "./catalog.json"
   },
+  "capabilities": {
+    "releaseHistory": true
+  },
   "networkOrigins": {
     "api": [
       "https://luxus.github.io"
@@ -15,6 +18,8 @@
     "downloads": [
       "https://luxus.github.io"
     ],
-    "media": []
+    "media": [
+      "https://luxus.github.io"
+    ]
   }
 }

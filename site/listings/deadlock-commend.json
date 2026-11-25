@@ -15,6 +15,10 @@
     "complock",
     "hudpp"
   ],
+  "images": [
+    "../images/deadlock-commend.svg"
+  ],
+  "releaseHistoryUrl": "../history/deadlock-commend.json",
   "release": {
     "id": "2.0.1",
     "contentRevision": "sha256-681cb4ae5b1341ba",

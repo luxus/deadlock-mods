@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": "0.1.1",
+      "contentRevision": "sha256-bc5501f869913251",
+      "version": "0.1.1",
+      "publishedAt": "2026-11-25",
+      "changelog": "### Changed\n\n- The vendored Addon Settings library moves from 1.2.4 (`BUILD` 10) to 1.2.6 (`BUILD` 13): the ADDONS\n  list grows to 880 px before it scrolls, multi-layout registrations work (1.2.5), and the Activated\n  bubble recursion and the alias-unset-on-takeover are fixed (1.2.6)."
+    },
+    {
+      "id": "0.1.0",
+      "contentRevision": "sha256-4358511fc0d284f9",
+      "version": "0.1.0",
+      "publishedAt": "2026-11-23",
+      "changelog": "- The mod as it moved into this repository: an always-visible Ready / Active / Cooldown timer for the\n  zipline speed boost, a settings tab in CompLock HUD++ or the ADDONS window, and localization.\n- Earlier history is in the [deadlock-qol-mods repository](https://github.com/luxus/deadlock-qol-mods)."
+    }
+  ],
+  "nextCursor": null
+}

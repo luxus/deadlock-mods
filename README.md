@@ -21,8 +21,8 @@ which renders the same `catalog.json` and `site/listings/*.json` the source serv
 | Improved Quickbuy | `mods/improved-quickbuy/` | 1.0.4 |
 | Deadlock Commend | `mods/deadlock-commend/` | 2.0.0 |
 | Deadlock Profile Links | `mods/deadlock-profile-links/` | 2.0.3 |
-| Deadlock Lobby Ranks | `mods/lobby-ranks/` | 0.2.1 (zip of both paks) |
-| Deadlock Zipline Boost | `mods/zipline-boost/` | 0.1.0 |
+| Deadlock Lobby Ranks | `mods/deadlock-lobby-ranks/` | 0.2.1 (zip of both paks) |
+| Deadlock Zipline Boost | `mods/deadlock-zipline-boost/` | 0.1.0 |
 | Thicker Outlines (Vulkan) | third-party, VPK only, anonymous | 1.0 |
 | Thicker Outlines (DX11) | third-party, VPK only, anonymous | 1.0 |
 | No Music, Low Gun Volume | third-party, VPK only, anonymous | 1.0 |
@@ -35,9 +35,10 @@ notes from.
 ## Layout
 
 - `site/` — what GitHub Pages serves: `dmm-source.json`, `catalog.json`,
-  `listings/*.json`, `changelogs/*.md` (published from the mods' CHANGELOGs),
-  `files/` (the VPKs and zips themselves; relative download URLs, so the
-  source is self-contained), `images/` (screenshots; svg placeholders until
+  `listings/*.json`, `history/*.json` (the release-history documents DMM and
+  Shiv read, generated from the mods' CHANGELOGs), `files/` (the VPKs and zips
+  themselves; relative download URLs, so the source is self-contained),
+  `images/` (the screenshots the listings point at; svg placeholders until
   real ones land), `index.html` (the showcase) and `party/` (the Lobby
   Ranks party bridge page).
 - `mods/` — the mods as peers; `mods/SHA256SUMS` records what each pak
@@ -69,19 +70,20 @@ A release is one commit and one tag:
 # write the [X.Y.Z] section in the mod's CHANGELOG.md first
 # (improved-quickbuy: sh mods/improved-quickbuy/tools/changelog.sh release X.Y.Z)
 sh tools/ci.sh
-sh tools/release.sh deadlock-commend 2.0.1 mods/deadlock-commend/build/deadlock-commend.vpk
-# lobby-ranks: sh mods/lobby-ranks/tools/zip.sh first and pass the zip
+sh tools/release.sh deadlock-commend 2.0.2 mods/deadlock-commend/build/deadlock-commend.vpk
+# deadlock-lobby-ranks: sh mods/deadlock-lobby-ranks/tools/zip.sh first and pass the zip
 git push origin main
 git tag deadlock-commend-v2.0.1 && git push origin deadlock-commend-v2.0.1
 ```
 
 `tools/release.sh` copies the artifact into `site/files/`, rewrites the
-listing from the artifact's real bytes, publishes the mod's `CHANGELOG.md`
-to `site/changelogs/<id>.md`, and bumps the catalog `snapshotId`;
-Pages deploys `site/` on push, and the tag workflow publishes the GitHub
-release with the changelog section as notes. Nobody edits a listing by hand.
-A mod's screenshots live in `site/images/<id>.png` (the showcase prefers a
-real screenshot over the shipped `site/images/<id>.svg` placeholder).
+listing from the artifact's real bytes, regenerates the release-history
+document from the mod's `CHANGELOG.md` (`tools/history.js`), and bumps the
+catalog `snapshotId`; Pages deploys `site/` on push, and the tag workflow
+publishes the GitHub release with the changelog section as notes. Nobody
+edits a listing by hand. A mod's screenshots are the `images` field of its
+listing — drop the real file in `site/images/` and put it first in the
+array; the shipped svg placeholder stays as a fallback.
 
 Third-party entries have no source: add the listing, the artifact in
 `site/files/`, a placeholder image, and tag `<id>-v<version>`; the release

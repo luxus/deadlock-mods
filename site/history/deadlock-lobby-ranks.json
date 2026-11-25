@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": "0.2.2",
+      "contentRevision": "sha256-38c11538dbfcd816",
+      "version": "0.2.2",
+      "publishedAt": "2026-11-25",
+      "changelog": "### Changed\n\n- The vendored Addon Settings library moves from 1.2.3 (`BUILD` 9) to 1.2.6 (`BUILD` 13): the ADDONS\n  list grows to 880 px before it scrolls (1.2.4), multi-layout registrations work (1.2.5), and the\n  Activated bubble recursion and the alias-unset-on-takeover are fixed (1.2.6)."
+    },
+    {
+      "id": "0.2.1",
+      "contentRevision": "sha256-4f53d8fee2faa0e5",
+      "version": "0.2.1",
+      "publishedAt": "2026-11-23",
+      "changelog": "- The mod as it moved into this repository: rank badges next to every player in the Escape menu player\n  list, optional party markers, two paks installed together (list + entry hook), a settings tab in\n  CompLock HUD++ or the ADDONS window, and localization.\n- Earlier history is in the [deadlock-qol-mods repository](https://github.com/luxus/deadlock-qol-mods)."
+    }
+  ],
+  "nextCursor": null
+}

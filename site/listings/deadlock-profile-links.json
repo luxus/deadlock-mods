@@ -3,7 +3,7 @@
   "title": "Deadlock Profile Links",
   "availability": "available",
   "isNsfw": false,
-  "description": "Rank badge and buttons for [Statlocker](https://statlocker.gg/) and [DeadChaps](https://www.deadchaps.gg/) on profile pages, profile cards and the post-game scoreboard.\n\n- Rank badge from the public Deadlock API\n- Buttons that open the player's Statlocker and DeadChaps pages\n- On the post-game scoreboard the logos sit in a slot after each player's stats row, next to the name\n- One \"Profile links\" toggle in settings (on by default)\n- A \"Profile Links\" tab in [CompLock HUD++](https://deadlockconfig.com/), or an ADDONS window in the Esc menu without HUD++\n- \"Reset Profile Links\" on the right of the settings foot puts the toggle back to the default\n- Toggle descriptions appear as a tooltip on hover, like HUD++'s own rows\n- Written from scratch; contains no code from the previous Profile Links pak",
+  "description": "[Statlocker](https://statlocker.gg/) and [DeadChaps](https://www.deadchaps.gg/) buttons plus a rank badge where you inspect one player: their profile page, the player card, and the post-game scoreboard. Not the Escape menu list — that is Deadlock Lobby Ranks.\n\n- Buttons that open the player's Statlocker and DeadChaps pages\n- A rank badge from the public Deadlock API, beside the buttons\n- On the post-game scoreboard the logos sit in a slot after each player's stats row, next to the name\n- One \"Profile links\" toggle in settings (on by default)\n- A \"Profile Links\" tab in [CompLock HUD++](https://deadlockconfig.com/), or an ADDONS window in the Esc menu without HUD++\n- \"Reset Profile Links\" on the right of the settings foot puts the toggle back to the default\n- Toggle descriptions appear as a tooltip on hover, like HUD++'s own rows\n- Written from scratch; contains no code from the previous Profile Links pak",
   "descriptionFormat": "markdown",
   "author": "luxus",
   "homepageUrl": "https://github.com/luxus/deadlock-mods/tree/main/mods/deadlock-profile-links",
@@ -16,6 +16,10 @@
     "complock",
     "hudpp"
   ],
+  "images": [
+    "../images/deadlock-profile-links.svg"
+  ],
+  "releaseHistoryUrl": "../history/deadlock-profile-links.json",
   "release": {
     "id": "2.0.3",
     "contentRevision": "sha256-0b1c8c8cec00bae5",

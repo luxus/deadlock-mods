@@ -19,8 +19,8 @@ check_mod() {
 		fail=1
 	fi
 }
-check_mod mods/lobby-ranks mods/lobby-ranks/src/main.js
-check_mod mods/zipline-boost mods/zipline-boost/src/main.js
+check_mod mods/deadlock-lobby-ranks mods/deadlock-lobby-ranks/src/main.js
+check_mod mods/deadlock-zipline-boost mods/deadlock-zipline-boost/src/main.js
 check_mod mods/deadlock-commend mods/deadlock-commend/src/main.js
 check_mod mods/deadlock-profile-links mods/deadlock-profile-links/src/page.js
 check_mod mods/improved-quickbuy mods/improved-quickbuy/src/main.js

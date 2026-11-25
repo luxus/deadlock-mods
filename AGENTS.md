@@ -11,11 +11,17 @@ A comment does not enforce a rule. The check named here does.
 | A listing in `site/listings/` has no `catalog.json` entry | `sh tools/check-catalog.sh` |
 | A DMM client rejects the source (descriptor, catalog, paths, sizes, hashes) | `node tools/dmm-check.mjs site`, DMM's own preflight, vendored at `tools/dmm-check.mjs` |
 | A mod's listing ships a version its `CHANGELOG.md` has no section for | `sh tools/check-catalog.sh` |
-| A mod's changelog is not published to the site, or the published copy is stale | `sh tools/check-catalog.sh`; `tools/release.sh` copies `mods/<id>/CHANGELOG.md` to `site/changelogs/<id>.md` |
+| A mod's release history is stale or misses the shipped release | `tools/history.js` regenerates `site/history/<id>.json` from `CHANGELOG.md` on every release; `sh tools/check-catalog.sh` |
+| A listing's images point at files that do not exist in `site/` | `sh tools/check-catalog.sh` |
 | The Improved Quickbuy listing is not the stored `release/` VPK | `sh tools/check-catalog.sh` |
 | The showcase and the DMM source disagree (page edited separately) | There is nothing to edit: `site/index.html` renders `catalog.json` and `site/listings/*.json` |
 | A release changes the artifact but not the listing, or the other way round | `tools/release.sh` writes both in one commit |
 | A superseded artifact stays in `site/files/` after a release replaces it | `tools/release.sh` prunes files no listing references; `sh tools/check-catalog.sh` |
+
+One source of truth per kind of data: the listing is the only place a
+description, version, hash or image list lives, and `CHANGELOG.md` is the
+only changelog; `tools/history.js` generates `site/history/<id>.json` from
+it for DMM, Shiv and the showcase alike.
 
 ## The mods and the library
 

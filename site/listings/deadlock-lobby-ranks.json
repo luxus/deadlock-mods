@@ -1,0 +1,44 @@
+{
+  "id": "deadlock-lobby-ranks",
+  "title": "Deadlock Lobby Ranks",
+  "availability": "available",
+  "isNsfw": false,
+  "description": "Rank badges next to every player in the Escape menu player list. The screens where you inspect one player are Deadlock Profile Links.\n\n- A rank badge per player, from the [deadlock-api.com](https://deadlock-api.com/) rank image\n- Party markers (optional): coloured person icons left of the rank for players on the same team who are Steam friends, via deadlock-api.com and the [party bridge page](https://luxus.github.io/deadlock-mods/party/)\n- Two paks installed together in load order: the list layout and script (pak01) and an entry hook that exposes account ids (pak02)\n- A \"Lobby Ranks\" tab in [CompLock HUD++](https://deadlockconfig.com/), or an ADDONS window in the Esc menu without HUD++\n- Written from scratch, MIT",
+  "descriptionFormat": "markdown",
+  "author": "luxus",
+  "homepageUrl": "https://github.com/luxus/deadlock-mods/tree/main/mods/deadlock-lobby-ranks",
+  "contentType": "hud",
+  "tags": [
+    "hud",
+    "lobby",
+    "ranks",
+    "complock",
+    "hudpp"
+  ],
+  "images": [
+    "../images/deadlock-lobby-ranks.svg"
+  ],
+  "releaseHistoryUrl": "../history/deadlock-lobby-ranks.json",
+  "release": {
+    "id": "0.2.2",
+    "contentRevision": "sha256-38c11538dbfcd816",
+    "version": "0.2.2",
+    "artifacts": [
+      {
+        "id": "lobby-ranks-zip",
+        "filename": "deadlock-lobby-ranks-0.2.2.zip",
+        "format": "zip",
+        "download": {
+          "url": "../files/deadlock-lobby-ranks-0.2.2.zip"
+        },
+        "size": 33523,
+        "hashes": {
+          "sha256": "38c11538dbfcd816d7445c4da59dfff2abbfffa8efcd810454e9f663dbc0cc66"
+        }
+      }
+    ],
+    "installation": {
+      "mode": "manual"
+    }
+  }
+}

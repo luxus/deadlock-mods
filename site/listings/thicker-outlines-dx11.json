@@ -14,6 +14,9 @@
     "complock",
     "third-party"
   ],
+  "images": [
+    "../images/thicker-outlines-dx11.svg"
+  ],
   "release": {
     "id": "1.0",
     "contentRevision": "sha256-9778c8893855d51",

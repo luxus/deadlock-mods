@@ -14,6 +14,9 @@
     "complock",
     "third-party"
   ],
+  "images": [
+    "../images/thicker-outlines.svg"
+  ],
   "release": {
     "id": "1.0",
     "contentRevision": "sha256-e02921b04f660c9c",

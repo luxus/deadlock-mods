@@ -14,6 +14,10 @@
     "complock",
     "hudpp"
   ],
+  "images": [
+    "../images/improved-quickbuy.svg"
+  ],
+  "releaseHistoryUrl": "../history/improved-quickbuy.json",
   "release": {
     "id": "1.0.5",
     "contentRevision": "sha256-608cf209415dd192",
