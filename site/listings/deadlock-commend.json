@@ -16,20 +16,20 @@
     "hudpp"
   ],
   "release": {
-    "id": "2.0.0",
-    "contentRevision": "sha256-91e08bf58095b00b",
-    "version": "2.0.0",
+    "id": "2.0.1",
+    "contentRevision": "sha256-681cb4ae5b1341ba",
+    "version": "2.0.1",
     "artifacts": [
       {
         "id": "deadlock-commend-vpk",
-        "filename": "deadlock-commend-2.0.0.vpk",
+        "filename": "deadlock-commend-2.0.1.vpk",
         "format": "vpk",
         "download": {
-          "url": "../files/deadlock-commend-2.0.0.vpk"
+          "url": "../files/deadlock-commend-2.0.1.vpk"
         },
-        "size": 222381,
+        "size": 226340,
         "hashes": {
-          "sha256": "91e08bf58095b00be95c9eba111398ec2b4a80476e3614c2b8002c6913365554"
+          "sha256": "681cb4ae5b1341bae36a68fd3cbfc74c6f7a439177b6169a3eaf68d50ac3cc11"
         }
       }
     ],

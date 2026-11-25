@@ -1,6 +1,6 @@
 # Deadlock Commend
 
-2.0.0. Four buttons on the post-game screens: Team, Enemy, All, and Return.
+2.0.1. Four buttons on the post-game screens: Team, Enemy, All, and Return.
 
 Clean-room, MIT (LICENSE). Behaviour and measurements are `docs/cleanroom-spec/commend.md`.
 

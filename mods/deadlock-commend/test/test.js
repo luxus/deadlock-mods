@@ -41,7 +41,7 @@ world('Team1');
 load(SRC);
 advance(0);
 assert(S.errors().length === 0, 'no errors: ' + S.errors().join(' | '));
-assert($.DcTest.VERSION === '2.0.0', 'version');
+assert($.DcTest.VERSION === '2.0.1', 'version');
 assert($.DcTest.TICK_S === 0.25, 'tick is 0.25 s');
 const row = H.ctx.FindChildTraverse('DcRow_Team1');
 assert(shown(row), 'team screen shows its row');

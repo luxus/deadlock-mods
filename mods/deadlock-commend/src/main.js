@@ -1,4 +1,4 @@
-const VERSION = '2.0.0';
+const VERSION = '2.0.1';
 const TICK_S = 0.25;
 const SCREENS = ['MVP', 'Team1', 'Team2', 'Scoreboard'];
 const KINDS = ['team', 'enemy', 'all', 'return'];

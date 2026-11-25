@@ -36,6 +36,20 @@ else
 fi
 node tools/update-listing.js "$MOD" "$V" "$ARTIFACT"
 cp "$M/CHANGELOG.md" "site/changelogs/$MOD.md"
+# The catalog is current state, not an archive: an artifact no listing references
+# anymore leaves with the release that replaced it. GitHub Releases and git hold history.
+node -e '
+const fs = require("fs");
+const catalog = JSON.parse(fs.readFileSync("site/catalog.json", "utf8"));
+const referenced = new Set();
+for (const item of catalog.items) {
+  const d = JSON.parse(fs.readFileSync("site/listings/" + item.id + ".json", "utf8"));
+  for (const a of d.release.artifacts) referenced.add(a.filename);
+}
+for (const f of fs.readdirSync("site/files")) {
+  if (!referenced.has(f)) { fs.unlinkSync("site/files/" + f); console.log("pruned superseded site/files/" + f); }
+}
+'
 git add -A
 git commit -m "release: $MOD $V"
 echo "push, then tag: git tag $MOD-v$V && git push origin $MOD-v$V"

@@ -15,6 +15,7 @@ A comment does not enforce a rule. The check named here does.
 | The Improved Quickbuy listing is not the stored `release/` VPK | `sh tools/check-catalog.sh` |
 | The showcase and the DMM source disagree (page edited separately) | There is nothing to edit: `site/index.html` renders `catalog.json` and `site/listings/*.json` |
 | A release changes the artifact but not the listing, or the other way round | `tools/release.sh` writes both in one commit |
+| A superseded artifact stays in `site/files/` after a release replaces it | `tools/release.sh` prunes files no listing references; `sh tools/check-catalog.sh` |
 
 ## The mods and the library
 

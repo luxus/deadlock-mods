@@ -8,7 +8,7 @@ const assert = (c, m) => { if (c) { passes++; return; } fails++; console.error('
 const read = rel => fs.readFileSync(path.join(pak, rel), 'utf8');
 
 const js = read('panorama/scripts/deadlock_commend.js');
-assert(js.includes("const VERSION = '2.0.0';"), 'script version 2.0.0');
+assert(js.includes("const VERSION = '2.0.1';"), 'script version 2.0.1');
 assert(js.includes('const TICK_S = 0.25;'), 'visibility tick is 0.25 s');
 assert(!/0\.016/.test(js), 'no per-frame schedule');
 assert(!/qollite|QoL Lite|Umm\.|friends_rank|auto_commend/i.test(js), 'no borrowed commend markers');
@@ -17,7 +17,7 @@ assert(!js.includes('ClientUI_FireOutput'), 'no mute-list poll');
 
 const settings = read('panorama/scripts/deadlock_commend_settings.js');
 assert(settings.includes("id: 'deadlock_commend'"), 'addon id deadlock_commend');
-assert(settings.includes("const VERSION = '2.0.0';") && settings.includes("'Deadlock Commend: ' + VERSION + ' loaded"), 'loaded log line');
+assert(settings.includes("const VERSION = '2.0.1';") && settings.includes("'Deadlock Commend: ' + VERSION + ' loaded"), 'loaded log line');
 assert(settings.includes('const BUILD = 13;'), 'addon settings 1.2.6 build 13');
 const reg = read('panorama/scripts/deadlock_commend_register.js');
 assert(reg.includes('DC-diag register hud'), 'hud registrar log');
