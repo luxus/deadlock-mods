@@ -83,6 +83,10 @@ release with the changelog section as notes. Nobody edits a listing by hand.
 A mod's screenshots live in `site/images/<id>.png` (the showcase prefers a
 real screenshot over the shipped `site/images/<id>.svg` placeholder).
 
+Third-party entries have no source: add the listing, the artifact in
+`site/files/`, a placeholder image, and tag `<id>-v<version>`; the release
+workflow then publishes them with the listing description as notes.
+
 ## CI
 
 `ci.yml` runs `tools/ci.sh` (mods) and `tools/check-catalog.sh` (catalog) on
