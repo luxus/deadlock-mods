@@ -1,6 +1,6 @@
 # Improved Quickbuy
 
-A Deadlock HUD mod that shows the next items in your quickbuy queue and how many souls you still need for each one. It works with [CompLock HUD++](https://deadlockconfig.com/) and without it. Current version: 1.0.4.
+A Deadlock HUD mod that shows the next items in your quickbuy queue and how many souls you still need for each one. It works with [CompLock HUD++](https://deadlockconfig.com/) and without it. Current version: 1.0.5.
 
 **Features**
 - Up to 5 quickbuy items on the HUD (1 = vanilla)

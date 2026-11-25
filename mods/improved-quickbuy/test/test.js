@@ -251,7 +251,7 @@ buildHud('vanilla'); H.stats.cls.add('gShopOpen'); S.load(SRC); advance(2);
 assert(!stripShown() && total() !== '', 'HUD loads with the shop open: shop mode from the class');
 start();
 // console: one load line and one first-update line, so a game log shows whether the script ran
-assert(S.info.length === 5 && /1\.0\.4 loaded/.test(S.info[0]) && S.info.some(m => /Esc menu: found looks=/.test(m)) && S.info.some(m => /Addon Settings: build \d+ hosts; ADDONS in the Esc menu/.test(m)) && S.info.some(m => /queue 3, souls found/.test(m)), 'console lines once: ' + S.info.join(' | '));
+assert(S.info.length === 5 && /1\.0\.5 loaded/.test(S.info[0]) && S.info.some(m => /Esc menu: found looks=/.test(m)) && S.info.some(m => /Addon Settings: build \d+ hosts; ADDONS in the Esc menu/.test(m)) && S.info.some(m => /queue 3, souls found/.test(m)), 'console lines once: ' + S.info.join(' | '));
 advance(5);
 assert(S.info.length === 5, 'no further console lines while running');
 // a component queued before its upgrade is not paid twice (Extra Health -> Colossus, from abilities.vdata)

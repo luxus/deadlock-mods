@@ -27,7 +27,7 @@ if [ "$MOD" = improved-quickbuy ]; then
 	[ -f "$B" ] || { echo "missing $B. Build the VPK and store it (CONTRIBUTING.md) first." >&2; exit 1; }
 	D=$(mktemp -d)
 	base64 -d "$B" > "$D/improved-quickbuy-$V.vpk"
-	(cd "$D" && sha256sum -c "$ROOT/$B.sha256")
+	(cd "$D" && sha256sum -c "$ROOT/$M/release/improved-quickbuy-$V.vpk.sha256")
 	ARTIFACT=$D/improved-quickbuy-$V.vpk
 else
 	[ $# -eq 3 ] || { echo "usage: sh tools/release.sh $MOD $V <artifact>" >&2; exit 1; }

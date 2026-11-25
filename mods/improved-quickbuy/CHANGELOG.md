@@ -8,6 +8,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and 
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-11-25
+
+### Fixed
+
+- The vendored Addon Settings library moves from 1.2.4 (`BUILD` 11) to 1.2.6 (`BUILD` 13):
+  multi-layout registrations work (values reach all layouts of a mod, destroyed layouts prune their
+  `Sub` panel, 1.2.5), and the Activated bubble recursion and the alias-unset-on-takeover are
+  fixed (1.2.6).
+
 ## [1.0.4] - 2026-11-23
 
 Addon Settings 1.2.4 (`BUILD` 11; build 10 was an unshipped test) changes the ADDONS window:
@@ -75,7 +84,8 @@ First public release.
 - [Addon Settings](https://github.com/luxus/improved-quickbuy/blob/main/docs/ADDON-SETTINGS-API.md), the settings library behind the tab and the window, which other mods can vendor for their own tabs (`lib/addon-settings/`, example in `examples/hello-addon`).
 - Rewritten from scratch with performance in mind.
 
-[Unreleased]: https://github.com/luxus/deadlock-mods/compare/improved-quickbuy-v1.0.4...HEAD
+[Unreleased]: https://github.com/luxus/deadlock-mods/compare/improved-quickbuy-v1.0.5...HEAD
+[1.0.5]: https://github.com/luxus/deadlock-mods/compare/improved-quickbuy-v1.0.4...improved-quickbuy-v1.0.5
 [1.0.4]: https://github.com/luxus/deadlock-mods/compare/improved-quickbuy-v1.0.3...improved-quickbuy-v1.0.4
 [1.0.3]: https://github.com/luxus/deadlock-mods/compare/improved-quickbuy-v1.0.2...improved-quickbuy-v1.0.3
 [1.0.2]: https://github.com/luxus/deadlock-mods/compare/improved-quickbuy-v1.0.1...improved-quickbuy-v1.0.2
