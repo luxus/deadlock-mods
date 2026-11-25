@@ -98,6 +98,10 @@ footer{margin-top:34px;font-size:13px;color:#c9c0a8}
       para.push(line);
     });
     flushP(); endList();
+    // an empty [Unreleased] heading is dropped: the changelog opens with the latest release
+    for (var i = out.length - 1; i >= 0; i--) {
+      if (/^<h3>\[Unreleased\]<\/h3>$/.test(out[i]) && out[i + 1] && /^<h[34]>/.test(out[i + 1])) out.splice(i, 1);
+    }
     return out.join("");
   }
   // An artifact's download URL is relative to its listing document, as in DMM.
