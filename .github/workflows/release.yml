@@ -1,11 +1,11 @@
 name: release
-# A <mod-id>-v<version> tag cut on a release commit becomes a GitHub release:
+# A <mod-id>-v<version> tag (glob filter, not regex) cut on a release commit becomes a GitHub release:
 # the tag must agree with the catalog listing, the listed artifact bytes must
 # match their sha256 in site/files/, and the notes are the mod's CHANGELOG.md
 # section. The catalog itself is already published: Pages deploys site/ on push.
 on:
   push:
-    tags: ['*-v[0-9]+.[0-9]+.[0-9]+']
+    tags: ['*-v[0-9]*']
 permissions:
   contents: write
 concurrency: release
