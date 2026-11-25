@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>luxus Deadlock Mods</title>
+<style>
+body{font:16px/1.5 system-ui,sans-serif;max-width:960px;margin:40px auto;padding:0 16px;background:#0e110c;color:#ffefd7}
+a{color:#5fe69e}
+code{background:#ffefd714;padding:2px 4px;border-radius:3px;word-break:break-all}
+.b{display:inline-block;padding:10px 16px;margin:4px 8px 4px 0;border:1px solid #5fe69e;border-radius:6px;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:20px}
+.card{border:1px solid #2c3323;border-radius:10px;padding:16px 18px;background:#131710;display:flex;flex-direction:column;gap:10px}
+.card.unavailable{opacity:.55}
+h2{font-size:19px;margin:0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ver{font-size:12px;color:#5fe69e;border:1px solid #2c3323;padding:1px 8px;border-radius:10px}
+.by{font-size:13px;color:#c9c0a8;margin:0}
+.desc{font-size:14px;color:#e7dfc8;overflow-wrap:anywhere}
+.desc p{margin:0 0 8px}
+.desc ul{margin:0 0 8px;padding-left:20px}
+.desc li{margin:2px 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;color:#c9c0a8;border:1px solid #2c3323;border-radius:10px;padding:1px 8px}
+.acts{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.btn{font-size:13px;padding:7px 12px;border:1px solid #5fe69e;border-radius:6px;text-decoration:none;color:#5fe69e}
+.btn.dim{border-color:#4a5140;color:#c9c0a8}
+footer{margin-top:34px;font-size:13px;color:#c9c0a8}
+</style></head>
+<body>
+<h1>luxus Deadlock Mods</h1>
+<p>A small public catalog of luxus's Deadlock addons for <a href="https://deadlockmods.app/">Deadlock Mod Manager</a>. This page and the DMM source render from the same catalog files, so what you read here is what DMM installs.</p>
+<p><a class="b" href="deadlock-mod-manager://sources/add?url=https%3A%2F%2Fluxus.github.io%2Fdeadlock-mods%2Fdmm-source.json">Add to DMM</a></p>
+<p>Source URL for DMM (Settings → Mods → Mod sources → Add source):<br><code>https://luxus.github.io/deadlock-mods/dmm-source.json</code></p>
+<noscript><p>Enable JavaScript to see the showcase, or read <a href="catalog.json">catalog.json</a> directly.</p></noscript>
+<div class="grid" id="grid"></div>
+<footer>Artifacts are served from this source and verified in <a href="https://github.com/luxus/deadlock-mods">the repository</a> by DMM's own offline preflight. Thicker Outlines (Vulkan) is a third-party part by HoppCX, redistributed unchanged.</footer>
+<script>
+(function () {
+  "use strict";
+  var SOURCE_URL = "https://luxus.github.io/deadlock-mods/dmm-source.json";
+  var enc = encodeURIComponent;
+
+  function esc(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function inline(s) {
+    return esc(s)
+      .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  }
+  // The catalog descriptions use paragraphs, "- " bullets, links and **bold**.
+  function md(text) {
+    return text.split(/\n{2,}/).map(function (para) {
+      var lines = para.split("\n").map(function (l) { return l.trim(); }).filter(Boolean);
+      if (lines.length && lines[0].charAt(0) === "-") {
+        return "<ul>" + lines.map(function (l) { return "<li>" + inline(l.replace(/^- /, "")) + "</li>"; }).join("") + "</ul>";
+      }
+      return "<p>" + lines.map(inline).join("<br>") + "</p>";
+    }).join("");
+  }
+  // An artifact's download URL is relative to its listing document, as in DMM.
+  function fileUrl(item, artifact) {
+    return new URL(artifact.download.url, new URL(item.detailUrl, location.href)).href;
+  }
+
+  fetch("catalog.json").then(function (r) { return r.json(); }).then(function (catalog) {
+    return Promise.all(catalog.items.map(function (item) {
+      return fetch(item.detailUrl).then(function (r) { return r.json(); }).then(function (detail) {
+        return { item: item, detail: detail };
+      });
+    }));
+  }).then(function (mods) {
+    var grid = document.getElementById("grid");
+    grid.innerHTML = mods.map(function (mod) {
+      var d = mod.detail;
+      var available = d.availability === "available" && d.release;
+      var card = ['<div class="card' + (available ? "" : " unavailable") + '" id="' + esc(d.id) + '">'];
+      card.push('<h2>' + esc(d.title) + (available ? ' <span class="ver">' + esc(d.release.version) + "</span>" : "") +
+        (available ? "" : ' <span class="ver">' + esc(d.availability) + "</span>") + "</h2>");
+      card.push('<p class="by">by ' + esc(d.author) + "</p>");
+      if (d.description) card.push('<div class="desc">' + md(d.description) + "</div>");
+      if (d.tags) {
+        card.push('<div class="tags">' + d.tags.map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") + "</div>");
+      }
+      if (available) {
+        card.push('<div class="acts">' +
+          '<a class="btn" href="deadlock-mod-manager://sources/install?url=' + enc(SOURCE_URL) +
+          "&amp;source=luxus&amp;listing=" + enc(d.id) + '">Install with DMM</a>' +
+          d.release.artifacts.map(function (a) {
+            return '<a class="btn dim" href="' + esc(fileUrl(mod.item, a)) + '">Download ' + a.format.toUpperCase() + "</a>";
+          }).join("") +
+          (d.homepageUrl ? '<a class="btn dim" href="' + esc(d.homepageUrl) + '">Project</a>' : "") +
+          "</div>");
+      }
+      card.push("</div>");
+      return card.join("");
+    }).join("");
+  }).catch(function (err) {
+    document.getElementById("grid").innerHTML =
+      '<p class="card">The catalog could not be loaded: ' + esc(String(err)) + "</p>";
+  });
+})();
+</script>
+</body></html>

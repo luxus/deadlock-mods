@@ -1,0 +1,47 @@
+{
+  "snapshotId": "2026-11-25-4",
+  "items": [
+    {
+      "id": "improved-quickbuy",
+      "title": "Improved Quickbuy",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./listings/improved-quickbuy.json"
+    },
+    {
+      "id": "deadlock-commend",
+      "title": "Deadlock Commend",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./listings/deadlock-commend.json"
+    },
+    {
+      "id": "deadlock-profile-links",
+      "title": "Deadlock Profile Links",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./listings/deadlock-profile-links.json"
+    },
+    {
+      "id": "thicker-outlines",
+      "title": "Thicker Outlines (Vulkan)",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./listings/thicker-outlines.json"
+    },
+    {
+      "id": "lobby-ranks",
+      "title": "Deadlock Lobby Ranks",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./listings/lobby-ranks.json"
+    },
+    {
+      "id": "zipline-boost",
+      "title": "Deadlock Zipline Boost",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./listings/zipline-boost.json"
+    }
+  ]
+}

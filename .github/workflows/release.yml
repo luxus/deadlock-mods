@@ -1,0 +1,51 @@
+name: release
+# A <mod-id>-v<version> tag cut on a release commit becomes a GitHub release:
+# the tag must agree with the catalog listing, the listed artifact bytes must
+# match their sha256 in site/files/, and the notes are the mod's CHANGELOG.md
+# section. The catalog itself is already published: Pages deploys site/ on push.
+on:
+  push:
+    tags: ['*-v[0-9]+.[0-9]+.[0-9]+']
+permissions:
+  contents: write
+concurrency: release
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Tag and listing agree
+        run: |
+          tag=${GITHUB_REF_NAME}
+          mod=${tag%-v*}
+          v=${tag#*-v}
+          node -e '
+            const fs = require("fs");
+            const { createHash } = require("crypto");
+            const [mod, v] = process.argv.slice(1);
+            const listing = JSON.parse(fs.readFileSync("site/listings/" + mod + ".json", "utf8")).release;
+            if (listing.version !== v) { console.error("catalog lists", mod, listing.version, "but the tag says", v); process.exit(1); }
+            const a = listing.artifacts[0];
+            const bytes = fs.readFileSync("site/files/" + a.filename);
+            if (bytes.length !== a.size || createHash("sha256").update(bytes).digest("hex") !== a.hashes.sha256) {
+              console.error("site/files/" + a.filename + " does not match the listing"); process.exit(1);
+            }
+          ' "$mod" "$v"
+      - name: Notes from the mod's CHANGELOG.md
+        run: |
+          tag=${GITHUB_REF_NAME}
+          mod=${tag%-v*}
+          v=${tag#*-v}
+          awk -v h="## [$v]" 'index($0, h) == 1 { on = 1; next } on && /^## \[/ { exit } on && !/^\[.*\]: / { print }' mods/$mod/CHANGELOG.md > /tmp/notes.md
+      - name: GitHub release with the artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=${GITHUB_REF_NAME}
+          mod=${tag%-v*}
+          if gh release view "$tag" >/dev/null 2>&1; then echo "release $tag exists, left as is"; exit 0; fi
+          file=$(node -e 'console.log(require("./site/listings/" + process.argv[1] + ".json").release.artifacts[0].filename)' "$mod")
+          gh release create "$tag" --verify-tag --title "$tag" --notes-file /tmp/notes.md "site/files/$file"

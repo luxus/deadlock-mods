@@ -1,0 +1,3 @@
+tools/modlock
+__pycache__/
+lib/addon-settings/examples/hello-addon/build/

@@ -1,0 +1,40 @@
+{
+  "id": "deadlock-commend",
+  "title": "Deadlock Commend",
+  "availability": "available",
+  "isNsfw": false,
+  "description": "Post-game buttons to commend your team, the enemy, everyone, or to return commends.\n\n- Four buttons on the Team, Scoreboard and MVP post-game screens: Team, Enemy, All, Return\n- One \"Commend buttons\" toggle in settings (on by default)\n- A \"Commend\" tab in [CompLock HUD++](https://deadlockconfig.com/), or an ADDONS window in the Esc menu without HUD++\n- \"Reset Commend\" on the right of the settings foot puts the toggle back to the default\n- Toggle descriptions appear as a tooltip on hover, like HUD++'s own rows\n- Written from scratch; contains no code or assets from other commend mods",
+  "descriptionFormat": "markdown",
+  "author": "luxus",
+  "homepageUrl": "https://github.com/luxus/deadlock-mods/tree/main/mods/deadlock-commend",
+  "contentType": "hud",
+  "tags": [
+    "hud",
+    "commend",
+    "post-game",
+    "complock",
+    "hudpp"
+  ],
+  "release": {
+    "id": "2.0.0",
+    "contentRevision": "sha256-91e08bf58095b00b",
+    "version": "2.0.0",
+    "artifacts": [
+      {
+        "id": "deadlock-commend-vpk",
+        "filename": "deadlock-commend-2.0.0.vpk",
+        "format": "vpk",
+        "download": {
+          "url": "../files/deadlock-commend-2.0.0.vpk"
+        },
+        "size": 222381,
+        "hashes": {
+          "sha256": "91e08bf58095b00be95c9eba111398ec2b4a80476e3614c2b8002c6913365554"
+        }
+      }
+    ],
+    "installation": {
+      "mode": "manual"
+    }
+  }
+}

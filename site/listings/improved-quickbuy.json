@@ -1,0 +1,39 @@
+{
+  "id": "improved-quickbuy",
+  "title": "Improved Quickbuy",
+  "availability": "available",
+  "isNsfw": false,
+  "description": "Shows the souls you're still missing for your queued items, right in the HUD.\n\n- Up to 5 quickbuy items on the HUD (1 = vanilla)\n- \"Missing souls\" badge above each item, counted along your queue\n- Shop: running totals per queued item and a total for the whole queue\n- Integrated into [CompLock HUD++](https://deadlockconfig.com/): its own \"Quickbuy\" tab, every feature togglable\n- Works without HUD++: an ADDONS button in the Esc menu opens its own settings window\n- \"Reset Quickbuy\" on the right of the settings foot puts options back to the defaults, and a \"Saved\" line, like CompLock's own tabs\n- In every language Deadlock ships, following the game's language\n- Rewritten from scratch with performance in mind\n\nInspired by Enhanced Quickbuy by Aminsx (gamebanana.com/mods/664041). Written from scratch; contains no code or assets from it.",
+  "descriptionFormat": "markdown",
+  "author": "luxus",
+  "homepageUrl": "https://luxus.github.io/deadlock-mods/#improved-quickbuy",
+  "contentType": "hud",
+  "tags": [
+    "hud",
+    "quickbuy",
+    "complock",
+    "hudpp"
+  ],
+  "release": {
+    "id": "1.0.4",
+    "contentRevision": "sha256-0061a0e4795598e5",
+    "version": "1.0.4",
+    "artifacts": [
+      {
+        "id": "improved-quickbuy-vpk",
+        "filename": "improved-quickbuy-1.0.4.vpk",
+        "format": "vpk",
+        "download": {
+          "url": "../files/improved-quickbuy-1.0.4.vpk"
+        },
+        "size": 157374,
+        "hashes": {
+          "sha256": "0061a0e4795598e5501681c31936cb11bc54015d1568fde1099eb16e05d0b50d"
+        }
+      }
+    ],
+    "installation": {
+      "mode": "manual"
+    }
+  }
+}

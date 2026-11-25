@@ -1,0 +1,31 @@
+deadlock-mods: Deadlock Panorama mods by luxus, the settings library they share, and the catalog that ships them.
+
+Copyright (c) 2026 Kai Löhnert (luxus). MIT (LICENSE), unless a file says otherwise.
+
+Credits
+- zipline-boost: the overlay's structure, placement and icon are adapted from the
+  Zip Boost overlay in QOLLOCK by civo7 (https://github.com/civo7/QOLLOCK),
+  Apache License 2.0. See mods/zipline-boost/NOTICE for the files and the changes.
+- lobby-ranks: written from scratch, MIT (mods/lobby-ranks/LICENSE).
+- commend: written from scratch against docs/cleanroom-spec/commend.md, MIT (mods/deadlock-commend/LICENSE).
+  Settings strings are Kai's. Button labels on the row are fixed English.
+- profile-links: written from scratch against docs/cleanroom-spec/profile-links.md, MIT
+  (mods/deadlock-profile-links/LICENSE). Settings strings are Kai's. The 64x64 logos are the
+  Statlocker and DeadChaps site icons, scaled with Lanczos and compiled by tools/vtex.py
+  (mods/deadlock-profile-links/tools/vtex.py).
+- improved-quickbuy: written from scratch, inspired by Enhanced Quickbuy by Aminsx
+  (gamebanana.com/mods/664041); contains no code or assets from it. MIT
+  (mods/improved-quickbuy/LICENSE, credits in mods/improved-quickbuy/CREDITS.md).
+- lib/addon-settings: Addon Settings by luxus, MIT, the one copy every mod vendors (see
+  docs/ADDON-SETTINGS-API.md).
+- thicker-outlines: third-party CompLock part by HoppCX (https://deadlockconfig.com/),
+  redistributed unchanged; only the VPK is in this repository (site/files/), no source.
+- Rank badge images come from the deadlock-api.com API
+  (https://api.deadlock-api.com), fetched at runtime and not stored here.
+- Files under mods/*/vanilla/ are Valve's Deadlock layouts, decompiled from the
+  game's pak01_dir.vpk with modlock as the unmodified input for each mod's tools/layout.py.
+  They belong to Valve. hud.xml.reference is a reference copy and is not shipped.
+- Paks are compiled with modlock (https://github.com/paralin/modlock, MIT), v0.1.77.
+
+Third-party services contacted
+- api.deadlock-api.com: rank badge images (lobby-ranks).

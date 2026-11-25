@@ -1,0 +1,3 @@
+build/
+*.vpk
+__pycache__/
