@@ -1,0 +1,39 @@
+{
+  "id": "thicker-outlines-dx11",
+  "title": "Thicker Outlines (DX11)",
+  "availability": "available",
+  "isNsfw": false,
+  "description": "Thicker hero and unit outlines (DirectX 11). A third-party pak, redistributed unchanged; its author prefers to stay anonymous.\n\n- The DX11 counterpart of Thicker Outlines (Vulkan)\n- Addon version 1.0\n- Not allowed in tournaments",
+  "descriptionFormat": "markdown",
+  "author": "anonymous",
+  "homepageUrl": "https://luxus.github.io/deadlock-mods/#thicker-outlines-dx11",
+  "contentType": "hud",
+  "tags": [
+    "hud",
+    "outlines",
+    "complock",
+    "third-party"
+  ],
+  "release": {
+    "id": "1.0",
+    "contentRevision": "sha256-9778c8893855d51",
+    "version": "1.0",
+    "artifacts": [
+      {
+        "id": "thicker-outlines-dx11-vpk",
+        "filename": "thicker-outlines-dx11.vpk",
+        "format": "vpk",
+        "download": {
+          "url": "../files/thicker-outlines-dx11.vpk"
+        },
+        "size": 5029,
+        "hashes": {
+          "sha256": "9778c8893855d51cd1fca32cebf03609c22459a707f357c23c109e375f498aee"
+        }
+      }
+    ],
+    "installation": {
+      "mode": "manual"
+    }
+  }
+}

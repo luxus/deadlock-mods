@@ -18,8 +18,9 @@ Credits
   (mods/improved-quickbuy/LICENSE, credits in mods/improved-quickbuy/CREDITS.md).
 - lib/addon-settings: Addon Settings by luxus, MIT, the one copy every mod vendors (see
   docs/ADDON-SETTINGS-API.md).
-- thicker-outlines: third-party CompLock part by HoppCX (https://deadlockconfig.com/),
-  redistributed unchanged; only the VPK is in this repository (site/files/), no source.
+- thicker-outlines (Vulkan and DX11) and no-music-low-gun-volume: third-party
+  parts, redistributed unchanged at their authors' request; the authors prefer
+  to stay anonymous.
 - Rank badge images come from the deadlock-api.com API
   (https://api.deadlock-api.com), fetched at runtime and not stored here.
 - Files under mods/*/vanilla/ are Valve's Deadlock layouts, decompiled from the

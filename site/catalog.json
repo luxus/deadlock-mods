@@ -1,5 +1,5 @@
 {
-  "snapshotId": "2026-11-25-8",
+  "snapshotId": "2026-11-25-9",
   "items": [
     {
       "id": "improved-quickbuy",
@@ -28,6 +28,20 @@
       "availability": "available",
       "isNsfw": false,
       "detailUrl": "./listings/thicker-outlines.json"
+    },
+    {
+      "id": "thicker-outlines-dx11",
+      "title": "Thicker Outlines (DX11)",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./listings/thicker-outlines-dx11.json"
+    },
+    {
+      "id": "no-music-low-gun-volume",
+      "title": "No Music, Low Gun Volume",
+      "availability": "available",
+      "isNsfw": false,
+      "detailUrl": "./listings/no-music-low-gun-volume.json"
     },
     {
       "id": "lobby-ranks",

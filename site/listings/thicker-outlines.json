@@ -3,10 +3,10 @@
   "title": "Thicker Outlines (Vulkan)",
   "availability": "available",
   "isNsfw": false,
-  "description": "Third-party CompLock part by [HoppCX](https://deadlockconfig.com/). Not authored by luxus.\n\nThicker hero and unit outlines (Vulkan). Originally part of [CompLock](https://deadlockconfig.com/) by jcStani and HoppCX, and distributed through the Pack Builder. The Pack Builder no longer lists this part; this is an unchanged copy of the VPK.\n\n- Author: HoppCX\n- Original page: [deadlockconfig.com](https://deadlockconfig.com/)\n- Addon title in the VPK: Thicker outlines (Vulkan) - HoppCX\n- Addon version 1.0\n",
+  "description": "Thicker hero and unit outlines (Vulkan). A third-party pak, redistributed unchanged; its author prefers to stay anonymous.\n\n- Addon version 1.0\n- Not allowed in tournaments",
   "descriptionFormat": "markdown",
-  "author": "HoppCX",
-  "homepageUrl": "https://deadlockconfig.com/",
+  "author": "anonymous",
+  "homepageUrl": "https://luxus.github.io/deadlock-mods/#thicker-outlines",
   "contentType": "hud",
   "tags": [
     "hud",

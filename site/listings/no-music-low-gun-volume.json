@@ -1,0 +1,39 @@
+{
+  "id": "no-music-low-gun-volume",
+  "title": "No Music, Low Gun Volume",
+  "availability": "available",
+  "isNsfw": false,
+  "description": "Mutes the game's music and lowers gun and ability sounds. A third-party pak, redistributed unchanged; its author prefers to stay anonymous.\n\n- Music replaced with silence; weapon and ability sounds quieter\n- Addon version 1.0",
+  "descriptionFormat": "markdown",
+  "author": "anonymous",
+  "homepageUrl": "https://luxus.github.io/deadlock-mods/#no-music-low-gun-volume",
+  "contentType": "audio",
+  "tags": [
+    "audio",
+    "music",
+    "complock",
+    "third-party"
+  ],
+  "release": {
+    "id": "1.0",
+    "contentRevision": "sha256-ffca7d9fb26ef85",
+    "version": "1.0",
+    "artifacts": [
+      {
+        "id": "no-music-low-gun-volume-vpk",
+        "filename": "no-music-low-gun-volume.vpk",
+        "format": "vpk",
+        "download": {
+          "url": "../files/no-music-low-gun-volume.vpk"
+        },
+        "size": 106068,
+        "hashes": {
+          "sha256": "ffca7d9fb26ef85428beade85203e41477a1ed787d1c7c915ba40e17a8f8b219"
+        }
+      }
+    ],
+    "installation": {
+      "mode": "manual"
+    }
+  }
+}

@@ -23,7 +23,9 @@ which renders the same `catalog.json` and `site/listings/*.json` the source serv
 | Deadlock Profile Links | `mods/deadlock-profile-links/` | 2.0.3 |
 | Deadlock Lobby Ranks | `mods/lobby-ranks/` | 0.2.1 (zip of both paks) |
 | Deadlock Zipline Boost | `mods/zipline-boost/` | 0.1.0 |
-| Thicker Outlines (Vulkan) | third-party by HoppCX, VPK only | 1.0 |
+| Thicker Outlines (Vulkan) | third-party, VPK only, anonymous | 1.0 |
+| Thicker Outlines (DX11) | third-party, VPK only, anonymous | 1.0 |
+| No Music, Low Gun Volume | third-party, VPK only, anonymous | 1.0 |
 
 Every mod follows the same shape; `mods/improved-quickbuy` is the guideline:
 `src/`, `vanilla/`, `test/`, `tools/assemble.sh`, `tools/build.sh`, a README
