@@ -46,6 +46,22 @@ for (const id of fs.readdirSync("mods").filter(n => fs.statSync("mods/" + n).isD
 }
 '
 
+echo "== every mod's changelog is published to the site =="
+node -e '
+const fs = require("fs");
+for (const id of fs.readdirSync("mods").filter(n => fs.statSync("mods/" + n).isDirectory())) {
+  const p = "site/listings/" + id + ".json";
+  if (!fs.existsSync(p)) continue;
+  const v = JSON.parse(fs.readFileSync(p, "utf8")).release.version;
+  const pub = "site/changelogs/" + id + ".md";
+  if (!fs.existsSync(pub)) { console.error(pub + " is missing (tools/release.sh writes it)"); process.exit(1); }
+  if (!fs.readFileSync(pub, "utf8").includes("## [" + v + "] - ")) {
+    console.error(pub + " has no section for " + v + ", which the catalog ships"); process.exit(1);
+  }
+}
+console.log("changelogs published for every mod with a listing");
+'
+
 echo "== quickbuy listing follows its release store =="
 node -e '
 const fs = require("fs");

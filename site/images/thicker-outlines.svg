@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Thicker Outlines screenshot placeholder">
+  <rect width="640" height="360" fill="#131710"/>
+  <rect x="1.5" y="1.5" width="637" height="357" fill="none" stroke="#2c3323" stroke-width="3"/>
+  <rect width="640" height="6" fill="#c39bff"/>
+  <g fill="none" stroke="#c39bff" opacity="0.5" stroke-width="6">
+    <rect x="470" y="110" width="90" height="120" rx="10"/>
+  </g>
+  <g fill="none" stroke="#c39bff" opacity="0.25" stroke-width="3">
+    <rect x="470" y="110" width="90" height="120" rx="10"/>
+  </g>
+  <text x="48" y="160" font-family="system-ui, sans-serif" font-size="34" font-weight="700" fill="#ffefd7">Thicker Outlines (Vulkan)</text>
+  <text x="48" y="196" font-family="system-ui, sans-serif" font-size="17" fill="#c9c0a8">Thicker hero and unit outlines, a CompLock part by HoppCX</text>
+  <text x="48" y="322" font-family="system-ui, sans-serif" font-size="13" fill="#7a8471">screenshot placeholder — a real one replaces this file</text>
+</svg>

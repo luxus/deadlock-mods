@@ -35,6 +35,7 @@ else
 	[ -f "$ARTIFACT" ] || { echo "no artifact at $ARTIFACT. sh tools/ci.sh builds every mod." >&2; exit 1; }
 fi
 node tools/update-listing.js "$MOD" "$V" "$ARTIFACT"
+cp "$M/CHANGELOG.md" "site/changelogs/$MOD.md"
 git add -A
 git commit -m "release: $MOD $V"
 echo "push, then tag: git tag $MOD-v$V && git push origin $MOD-v$V"

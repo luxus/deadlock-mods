@@ -11,6 +11,7 @@ A comment does not enforce a rule. The check named here does.
 | A listing in `site/listings/` has no `catalog.json` entry | `sh tools/check-catalog.sh` |
 | A DMM client rejects the source (descriptor, catalog, paths, sizes, hashes) | `node tools/dmm-check.mjs site`, DMM's own preflight, vendored at `tools/dmm-check.mjs` |
 | A mod's listing ships a version its `CHANGELOG.md` has no section for | `sh tools/check-catalog.sh` |
+| A mod's changelog is not published to the site, or the published copy is stale | `sh tools/check-catalog.sh`; `tools/release.sh` copies `mods/<id>/CHANGELOG.md` to `site/changelogs/<id>.md` |
 | The Improved Quickbuy listing is not the stored `release/` VPK | `sh tools/check-catalog.sh` |
 | The showcase and the DMM source disagree (page edited separately) | There is nothing to edit: `site/index.html` renders `catalog.json` and `site/listings/*.json` |
 | A release changes the artifact but not the listing, or the other way round | `tools/release.sh` writes both in one commit |

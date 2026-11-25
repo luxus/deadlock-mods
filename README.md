@@ -12,6 +12,7 @@ https://luxus.github.io/deadlock-mods/dmm-source.json
 
 Or use the "Add to DMM" button on the [catalog page](https://luxus.github.io/deadlock-mods/),
 which renders the same `catalog.json` and `site/listings/*.json` the source serves.
+**Shiv** reads the same URL: open its Sources screen, paste it, confirm.
 
 ## Mods
 
@@ -32,9 +33,11 @@ notes from.
 ## Layout
 
 - `site/` — what GitHub Pages serves: `dmm-source.json`, `catalog.json`,
-  `listings/*.json`, `files/` (the VPKs and zips themselves; relative download
-  URLs, so the source is self-contained), `index.html` (the showcase) and
-  `party/` (the Lobby Ranks party bridge page).
+  `listings/*.json`, `changelogs/*.md` (published from the mods' CHANGELOGs),
+  `files/` (the VPKs and zips themselves; relative download URLs, so the
+  source is self-contained), `images/` (screenshots; svg placeholders until
+  real ones land), `index.html` (the showcase) and `party/` (the Lobby
+  Ranks party bridge page).
 - `mods/` — the mods as peers; `mods/SHA256SUMS` records what each pak
   rebuilds to (modlock v0.1.77).
 - `lib/` — `addon-settings/`, the one copy of the settings-menu library every
@@ -71,9 +74,12 @@ git tag deadlock-commend-v2.0.1 && git push origin deadlock-commend-v2.0.1
 ```
 
 `tools/release.sh` copies the artifact into `site/files/`, rewrites the
-listing from the artifact's real bytes, and bumps the catalog `snapshotId`;
+listing from the artifact's real bytes, publishes the mod's `CHANGELOG.md`
+to `site/changelogs/<id>.md`, and bumps the catalog `snapshotId`;
 Pages deploys `site/` on push, and the tag workflow publishes the GitHub
 release with the changelog section as notes. Nobody edits a listing by hand.
+A mod's screenshots live in `site/images/<id>.png` (the showcase prefers a
+real screenshot over the shipped `site/images/<id>.svg` placeholder).
 
 ## CI
 

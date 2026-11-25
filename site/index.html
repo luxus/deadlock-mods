@@ -2,22 +2,35 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>luxus Deadlock Mods</title>
 <style>
-body{font:16px/1.5 system-ui,sans-serif;max-width:960px;margin:40px auto;padding:0 16px;background:#0e110c;color:#ffefd7}
+body{font:16px/1.5 system-ui,sans-serif;max-width:980px;margin:40px auto;padding:0 16px;background:#0e110c;color:#ffefd7}
 a{color:#5fe69e}
 code{background:#ffefd714;padding:2px 4px;border-radius:3px;word-break:break-all}
+h2{font-size:22px;margin:34px 0 8px}
+h3{font-size:15px;margin:0 0 6px}
 .b{display:inline-block;padding:10px 16px;margin:4px 8px 4px 0;border:1px solid #5fe69e;border-radius:6px;text-decoration:none}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:20px}
+.source{border:1px solid #2c3323;border-radius:10px;padding:16px 18px;background:#131710;margin-top:14px}
+.url{display:block;background:#0e110c;border:1px solid #2c3323;border-radius:6px;padding:10px 12px;margin:6px 0 14px;font:14px/1.4 ui-monospace,monospace;color:#5fe69e}
+.mgr{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.mgr p{font-size:14px;color:#e7dfc8;margin:4px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:14px}
 .card{border:1px solid #2c3323;border-radius:10px;padding:16px 18px;background:#131710;display:flex;flex-direction:column;gap:10px}
 .card.unavailable{opacity:.55}
-h2{font-size:19px;margin:0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.shot{margin:-16px -18px 0;border-bottom:1px solid #2c3323;border-radius:9px 9px 0 0;overflow:hidden;aspect-ratio:16/9;background:#0e110c}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+h2.title{font-size:19px;margin:0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .ver{font-size:12px;color:#5fe69e;border:1px solid #2c3323;padding:1px 8px;border-radius:10px}
 .by{font-size:13px;color:#c9c0a8;margin:0}
 .desc{font-size:14px;color:#e7dfc8;overflow-wrap:anywhere}
 .desc p{margin:0 0 8px}
 .desc ul{margin:0 0 8px;padding-left:20px}
 .desc li{margin:2px 0}
+.desc h3{font-size:15px;margin:10px 0 4px;color:#ffefd7}
+.desc h4{font-size:13px;margin:8px 0 4px;color:#5fe69e}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{font-size:11px;color:#c9c0a8;border:1px solid #2c3323;border-radius:10px;padding:1px 8px}
+.cl{border:1px solid #2c3323;border-radius:6px;padding:6px 10px}
+.cl summary{cursor:pointer;font-size:13px;color:#5fe69e}
+.cl .desc{margin-top:8px}
 .acts{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
 .btn{font-size:13px;padding:7px 12px;border:1px solid #5fe69e;border-radius:6px;text-decoration:none;color:#5fe69e}
 .btn.dim{border-color:#4a5140;color:#c9c0a8}
@@ -25,12 +38,28 @@ footer{margin-top:34px;font-size:13px;color:#c9c0a8}
 </style></head>
 <body>
 <h1>luxus Deadlock Mods</h1>
-<p>A small public catalog of luxus's Deadlock addons for <a href="https://deadlockmods.app/">Deadlock Mod Manager</a>. This page and the DMM source render from the same catalog files, so what you read here is what DMM installs.</p>
+<p>Five Deadlock mods, one settings library they share, and this registry that ships them. Every artifact is served from this source and hash-checked; the page you are reading and the registry your mod manager reads are the same data.</p>
+
+<div class="source">
+<h2 style="margin-top:0">Add this source to your mod manager</h2>
+<code class="url">https://luxus.github.io/deadlock-mods/dmm-source.json</code>
+<div class="mgr">
+<div>
+<h3>Deadlock Mod Manager</h3>
 <p><a class="b" href="deadlock-mod-manager://sources/add?url=https%3A%2F%2Fluxus.github.io%2Fdeadlock-mods%2Fdmm-source.json">Add to DMM</a></p>
-<p>Source URL for DMM (Settings → Mods → Mod sources → Add source):<br><code>https://luxus.github.io/deadlock-mods/dmm-source.json</code></p>
+<p>Or in DMM: Settings → Mods → Mod sources → Add source, and paste the URL above. Per mod: <i>Install with DMM</i> below.</p>
+</div>
+<div>
+<h3>Shiv</h3>
+<p>Open <a href="https://github.com/luxus/shiv">Shiv</a>'s <b>Sources</b> screen, paste the same URL, and confirm. Shiv speaks <code>dmm-source</code> natively, so it lists and updates these mods from the same source.</p>
+</div>
+</div>
+</div>
+
+<h2>The mods</h2>
 <noscript><p>Enable JavaScript to see the showcase, or read <a href="catalog.json">catalog.json</a> directly.</p></noscript>
 <div class="grid" id="grid"></div>
-<footer>Artifacts are served from this source and verified in <a href="https://github.com/luxus/deadlock-mods">the repository</a> by DMM's own offline preflight. Thicker Outlines (Vulkan) is a third-party part by HoppCX, redistributed unchanged.</footer>
+<footer>The catalog, the changelogs and the artifacts are all served from <a href="https://github.com/luxus/deadlock-mods">this repository</a>, verified by its CI with DMM's own offline preflight. Screenshots are placeholders until real ones land. Thicker Outlines (Vulkan) is a third-party part by HoppCX, redistributed unchanged.</footer>
 <script>
 (function () {
   "use strict";
@@ -45,25 +74,58 @@ footer{margin-top:34px;font-size:13px;color:#c9c0a8}
       .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   }
-  // The catalog descriptions use paragraphs, "- " bullets, links and **bold**.
+  // Markdown the catalog and the changelogs use: paragraphs, "- " bullets,
+  // ## and ### headings. The "# Changelog" h1 and the footer link lines are skipped.
   function md(text) {
-    return text.split(/\n{2,}/).map(function (para) {
-      var lines = para.split("\n").map(function (l) { return l.trim(); }).filter(Boolean);
-      if (lines.length && lines[0].charAt(0) === "-") {
-        return "<ul>" + lines.map(function (l) { return "<li>" + inline(l.replace(/^- /, "")) + "</li>"; }).join("") + "</ul>";
+    var out = [], para = [], list = false;
+    function flushP() {
+      if (para.length) { out.push("<p>" + para.map(inline).join("<br>") + "</p>"); para = []; }
+    }
+    function endList() { if (list) { out.push("</ul>"); list = false; } }
+    text.split("\n").forEach(function (raw) {
+      var line = raw.replace(/\s+$/, "");
+      if (/^# /.test(line)) { flushP(); endList(); return; }
+      if (/^## /.test(line)) { flushP(); endList(); out.push("<h3>" + inline(line.slice(3)) + "</h3>"); return; }
+      if (/^### /.test(line)) { flushP(); endList(); out.push("<h4>" + inline(line.slice(4)) + "</h4>"); return; }
+      if (/^\[.*\]: /.test(line)) { return; }
+      if (/^- /.test(line)) {
+        flushP();
+        if (!list) { out.push("<ul>"); list = true; }
+        out.push("<li>" + inline(line.slice(2)) + "</li>");
+        return;
       }
-      return "<p>" + lines.map(inline).join("<br>") + "</p>";
-    }).join("");
+      if (line === "") { flushP(); endList(); return; }
+      para.push(line);
+    });
+    flushP(); endList();
+    return out.join("");
   }
   // An artifact's download URL is relative to its listing document, as in DMM.
   function fileUrl(item, artifact) {
     return new URL(artifact.download.url, new URL(item.detailUrl, location.href)).href;
   }
+  // Real screenshots replace the shipped placeholder when one exists.
+  function shotUrl(id) {
+    var fallback = "images/" + id + ".svg";
+    return ["png", "jpg", "webp"].reduce(function (p, ext) {
+      return p.then(function (found) {
+        if (found) return found;
+        return fetch("images/" + id + "." + ext, { method: "HEAD" })
+          .then(function (r) { return r.ok ? "images/" + id + "." + ext : null; })
+          .catch(function () { return null; });
+      });
+    }, Promise.resolve(null)).then(function (found) { return found || fallback; });
+  }
 
   fetch("catalog.json").then(function (r) { return r.json(); }).then(function (catalog) {
     return Promise.all(catalog.items.map(function (item) {
-      return fetch(item.detailUrl).then(function (r) { return r.json(); }).then(function (detail) {
-        return { item: item, detail: detail };
+      var detail = fetch(item.detailUrl).then(function (r) { return r.json(); });
+      var changelog = fetch("changelogs/" + item.id + ".md")
+        .then(function (r) { return r.ok ? r.text() : null; })
+        .catch(function () { return null; });
+      var shot = shotUrl(item.id);
+      return Promise.all([detail, changelog, shot]).then(function (r) {
+        return { item: item, detail: r[0], changelog: r[1], shot: r[2] };
       });
     }));
   }).then(function (mods) {
@@ -72,10 +134,14 @@ footer{margin-top:34px;font-size:13px;color:#c9c0a8}
       var d = mod.detail;
       var available = d.availability === "available" && d.release;
       var card = ['<div class="card' + (available ? "" : " unavailable") + '" id="' + esc(d.id) + '">'];
-      card.push('<h2>' + esc(d.title) + (available ? ' <span class="ver">' + esc(d.release.version) + "</span>" : "") +
+      card.push('<div class="shot"><img src="' + esc(mod.shot) + '" alt="' + esc(d.title) + ' screenshot" loading="lazy"></div>');
+      card.push('<h2 class="title">' + esc(d.title) + (available ? ' <span class="ver">' + esc(d.release.version) + "</span>" : "") +
         (available ? "" : ' <span class="ver">' + esc(d.availability) + "</span>") + "</h2>");
       card.push('<p class="by">by ' + esc(d.author) + "</p>");
       if (d.description) card.push('<div class="desc">' + md(d.description) + "</div>");
+      if (mod.changelog) {
+        card.push('<details class="cl"><summary>Changelog</summary><div class="desc">' + md(mod.changelog) + "</div></details>");
+      }
       if (d.tags) {
         card.push('<div class="tags">' + d.tags.map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") + "</div>");
       }

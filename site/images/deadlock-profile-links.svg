@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Deadlock Profile Links screenshot placeholder">
+  <rect width="640" height="360" fill="#131710"/>
+  <rect x="1.5" y="1.5" width="637" height="357" fill="none" stroke="#2c3323" stroke-width="3"/>
+  <rect width="640" height="6" fill="#7ec3ff"/>
+  <g fill="#7ec3ff" opacity="0.16">
+    <rect x="440" y="60" width="140" height="26" rx="4"/>
+    <rect x="440" y="96" width="140" height="26" rx="4"/>
+  </g>
+  <g fill="#7ec3ff" opacity="0.5">
+    <rect x="540" y="60" width="40" height="26" rx="4"/>
+    <rect x="540" y="96" width="40" height="26" rx="4"/>
+  </g>
+  <text x="48" y="160" font-family="system-ui, sans-serif" font-size="34" font-weight="700" fill="#ffefd7">Deadlock Profile Links</text>
+  <text x="48" y="196" font-family="system-ui, sans-serif" font-size="17" fill="#c9c0a8">Rank badge plus Statlocker and DeadChaps buttons on profiles</text>
+  <text x="48" y="322" font-family="system-ui, sans-serif" font-size="13" fill="#7a8471">screenshot placeholder — a real one replaces this file</text>
+</svg>
