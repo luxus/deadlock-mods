@@ -5,8 +5,13 @@ notes from its section here.
 
 ## [Unreleased]
 
-- The vendored Addon Settings library is now 1.2.6 (`BUILD` 13): the ADDONS list grows to 880 px before
-  it scrolls, the Activated bubble recursion and the alias-unset-on-takeover are fixed.
+## [0.1.1] - 2026-11-25
+
+### Changed
+
+- The vendored Addon Settings library moves from 1.2.4 (`BUILD` 10) to 1.2.6 (`BUILD` 13): the ADDONS
+  list grows to 880 px before it scrolls, multi-layout registrations work (1.2.5), and the Activated
+  bubble recursion and the alias-unset-on-takeover are fixed (1.2.6).
 
 ## [0.1.0] - 2026-11-23
 

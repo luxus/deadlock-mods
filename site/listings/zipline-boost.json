@@ -16,20 +16,20 @@
     "hudpp"
   ],
   "release": {
-    "id": "0.1.0",
-    "contentRevision": "sha256-4358511fc0d284f9",
-    "version": "0.1.0",
+    "id": "0.1.1",
+    "contentRevision": "sha256-bc5501f869913251",
+    "version": "0.1.1",
     "artifacts": [
       {
         "id": "zipline-boost-vpk",
-        "filename": "deadlock-zipline-boost-0.1.0.vpk",
+        "filename": "deadlock-zipline-boost-0.1.1.vpk",
         "format": "vpk",
         "download": {
-          "url": "../files/deadlock-zipline-boost-0.1.0.vpk"
+          "url": "../files/deadlock-zipline-boost-0.1.1.vpk"
         },
-        "size": 100690,
+        "size": 102268,
         "hashes": {
-          "sha256": "4358511fc0d284f9361c97ab59ade3e1f7c2ff8f98b3e996ea93e033811b028c"
+          "sha256": "bc5501f869913251926cff69b707abaa19c50cecaa98ef3863c3a27599bee73d"
         }
       }
     ],

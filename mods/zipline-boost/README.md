@@ -1,6 +1,6 @@
 # Deadlock Zipline Boost
 
-0.1.0. An always-visible Ready / Active / Cooldown timer for the zipline speed boost. pak08 on lea was built from this tree.
+0.1.1. An always-visible Ready / Active / Cooldown timer for the zipline speed boost. pak08 on lea was built from this tree.
 
 The timer logic is our own (MIT). The overlay's look and placement are adapted from the Zip Boost overlay in QOLLOCK (`ql_feat_zip_boost.css`, Apache-2.0, see NOTICE): icon plus a column with title above state, bottom centre-left above the HUD. dacooderr's QoL Lite does not list this feature; the reference is QOL Lock.
 

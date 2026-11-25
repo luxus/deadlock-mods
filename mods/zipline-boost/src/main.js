@@ -1,4 +1,4 @@
-const VERSION = '0.1.0';
+const VERSION = '0.1.1';
 const BOOST_DEFAULT = true;
 const TICK_IDLE_S = 1;
 const TICK_ACTIVE_S = 0.2;

@@ -7,7 +7,7 @@ let fails = 0, passes = 0;
 const assert = (c, m) => { if (c) { passes++; return; } fails++; console.error('FAIL ' + m); };
 
 const js = fs.readFileSync(path.join(pak, 'panorama/scripts/zipline_boost.js'), 'utf8');
-assert(js.includes("const VERSION = '0.1.0';"), 'script version 0.1.0');
+assert(js.includes("const VERSION = '0.1.1';"), 'script version 0.1.1');
 assert(js.includes('const ACTIVE_MS = 32000;') && js.includes('const COOLDOWN_MS = 360000;'), '32 s / 360 s fallbacks');
 assert(js.includes("const HINT_ID = 'citadel_ability_zipline_boost';"), 'hint id');
 assert(js.includes("const BUFF_ID = 'status_citadel_ability_zipline_boost';"), 'buff id');

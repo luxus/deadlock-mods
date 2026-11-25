@@ -27,7 +27,7 @@ const shownOv = () => !!root() && root().visible !== false && shown(root());
 start({ hint: { active: true } });
 assert(S.errors.length === 0, 'no errors at start: ' + S.errors.join(' | '));
 assert(/const BOOST_DEFAULT = true;/.test(SRC), 'timer on by default');
-assert(S.info.some(m => /Deadlock Zipline Boost: 0\.1\.0 loaded \(/.test(m)), 'console line 0.1.0 loaded: ' + S.info.join(' | '));
+assert(S.info.some(m => /Deadlock Zipline Boost: 0\.1\.1 loaded \(/.test(m)), 'console line 0.1.1 loaded: ' + S.info.join(' | '));
 assert(T().TICK_IDLE_S === 1, 'idle tick is 1 s');
 assert(T().TICK_ACTIVE_S === 0.2, 'countdown tick is 0.2 s');
 assert(T().ACTIVE_MS === 32000 && T().COOLDOWN_MS === 360000, 'fallback windows are 32 s / 360 s');
