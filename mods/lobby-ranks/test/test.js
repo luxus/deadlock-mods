@@ -22,7 +22,7 @@ const badge = (row) => row && (row.FindChildTraverse('LrBadge'));
 start();
 assert(S.errors.length === 0, 'no errors at start: ' + S.errors.join(' | '));
 assert(/const RANKS_DEFAULT = true;/.test(SRC), 'Lobby ranks on by default');
-assert(S.info.some(m => /Deadlock Lobby Ranks: 0\.2\.1 loaded/.test(m)), 'console line 0.2.1 loaded: ' + S.info.join(' | '));
+assert(S.info.some(m => /Deadlock Lobby Ranks: 0\.2\.2 loaded/.test(m)), 'console line 0.2.2 loaded: ' + S.info.join(' | '));
 assert(T().TICK_S === 1, 'tick is 1 Hz, not a frame poll');
 assert(!/0\.016/.test(SRC), 'no 0.016 s / ~60 Hz interval in the built script');
 assert(T().rankUrl('1234567') === 'https://api.deadlock-api.com/v1/players/1234567/rank/image?format=webp', 'rank image url');

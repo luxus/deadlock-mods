@@ -1,5 +1,5 @@
 try { $.Msg('LR-diag script-entry'); } catch (e0) { /* no console */ }
-const VERSION = '0.2.1';
+const VERSION = '0.2.2';
 const DUO_DEFAULT = true;
 const PARTY_URL = 'https://luxus.github.io/deadlock-mods/party/';
 const PARTY_PREFIX = 'LRPARTY1 ';

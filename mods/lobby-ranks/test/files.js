@@ -8,7 +8,7 @@ let fails = 0, passes = 0;
 const assert = (c, m) => { if (c) { passes++; return; } fails++; console.error('FAIL ' + m); };
 
 const js = fs.readFileSync(path.join(pak, 'panorama/scripts/lobby_ranks.js'), 'utf8');
-assert(js.includes("const VERSION = '0.2.1';"), 'script version 0.2.1');
+assert(js.includes("const VERSION = '0.2.2';"), 'script version 0.2.2');
 assert(js.includes("try { $.Msg('LR-diag script-entry');"), 'script-entry is present');
 assert(js.includes("const RANKS_DEFAULT = true;"), 'ranks on by default');
 assert(js.includes('https://api.deadlock-api.com/v1/players'), 'public rank API host');

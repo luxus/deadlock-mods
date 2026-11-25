@@ -1,6 +1,6 @@
 # Deadlock Lobby Ranks
 
-0.2.1. Rank badges on the Escape menu player list. pak10 and pak11 on lea were built from this tree.
+0.2.2. Rank badges on the Escape menu player list. pak10 and pak11 on lea were built from this tree.
 
 Clean-room, MIT (LICENSE).
 
