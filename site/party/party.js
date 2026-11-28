@@ -8,6 +8,7 @@
 	var finish = function (obj) {
 		var t = PREFIX + JSON.stringify(obj);
 		document.title = t;
+		try { location.hash = encodeURIComponent(t); } catch (e) {}
 		if (out) out.textContent = t;
 	};
 	var ids = function (s) {
@@ -29,7 +30,7 @@
 	var team = {};
 	a.forEach(function (x) { team[x] = 'a'; });
 	b.forEach(function (x) { team[x] = team[x] ? 'x' : 'b'; });
-	var all = Object.keys(team).filter(function (x) { return team[x] !== 'x'; });
+	var all = Object.keys(team).filter(function (x) { return team[x] !== 'x'; }).sort(function (x, y) { return Number(x) - Number(y); });
 	var ctl = typeof AbortController === 'function' ? new AbortController() : null;
 	var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
 	fetch(API + all.join(','), ctl ? { signal: ctl.signal } : {}).then(function (r) {

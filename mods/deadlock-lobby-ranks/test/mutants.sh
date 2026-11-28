@@ -11,12 +11,11 @@ open('/tmp/lr_mutant.js','w').write(s)" "$@" || { echo "BROKEN $name"; return; }
 
 run default-off "const RANKS_DEFAULT = true;" "const RANKS_DEFAULT = false;"
 run tick-every-frame "const TICK_S = 1;" "const TICK_S = 0.016;"
+run double-probe "const PROBE_TRIES = 1;" "const PROBE_TRIES = 2;"
 run runs-when-off "const settingsChanged = () => { if (wanted()) { attach(); const s = st(); if (s.party && cfg.duo && !s.party.groups) s.party.want = ''; kick(); } else stop(); };" "const settingsChanged = () => { attach(); kick(); };" "	if (!wanted()) { if (ok(s.list)) entries(s.list).forEach(hideRow); AddonSettings.pulse(); return; }" "	if (!wanted()) { if (ok(s.list)) entries(s.list).forEach(hideRow); AddonSettings.pulse(); s.timer = \$.Schedule(TICK_S, tick); return; }"
 run write-every-tick "const show = (p, on) => { const v = on ? 'visible' : 'collapse'; if (!ok(p) || p.style.visibility === v) return; p.style.visibility = v; };" "const show = (p, on) => { if (ok(p)) p.style.visibility = on ? 'visible' : 'collapse'; };" "	if (badge.GetAttributeString('rankurl', '') !== url) {" "	if (true) {"
-run no-dismiss "if (!s.probe) { dismissMenus();" "if (!s.probe) {"
-run dismiss-every-probe "		s.probe = null;
-		s.probed = true;" "		s.probe = null; dismissMenus();
-		s.probed = true;"
+run no-dismiss "if (s.probed) { s.probed = false; dismissMenus(); diag('probes finished, menu dismissed'); }" "if (s.probed) { s.probed = false; }"
+run dismiss-every-probe "		s.probe = null;" "		s.probe = null; dismissMenus();"
 run key-by-name "const rowKey = row => { const h = rowHero(row);" "const rowKey = row => { const h = '';"
 run no-comma-ids "/(\\d)[,.'\\u2019\\u00a0 ](?=\\d{3}(?!\\d))/g" "/x^/g"
 run no-url-fallback "			if (frag.indexOf(PARTY_PREFIX) === 0) { partyResult(s, pp, frag); return; }" ""
@@ -30,4 +29,6 @@ run steam64-broken "	const id = subDec(t, STEAM64_BASE);" "	const id = t;"
 run mismatch-opens "	if (h && v && h !== v) return '';" "	if (false && h && v && h !== v) return '';"
 run bridge-in-list "	const host = escapeMenu();" "	const host = ok(s.list) ? s.list : escapeMenu();"
 run no-esc-gate "const mayProbe = () => escOpen() && !inHideout();" "const mayProbe = () => true;"
-run old-0.2.1-row-and-host-fallback "	const teams = root.FindChildrenWithClassTraverse('Team') || [];" "	const teams = (root.FindChildrenWithClassTraverse('Team') || []).length ? root.FindChildrenWithClassTraverse('Team') : [root];" "		const holder = ok(teams[t]) ? teams[t].FindChildTraverse('TeamEntries') : null;" "		const holder = ok(teams[t]) ? (teams[t].FindChildTraverse('TeamEntries') || teams[t]) : null;" "			if (ok(e) && typ === ROW_TYPE) {" "			if (ok(e)) {" "const hostFor = row => { const main = ok(row) ? row.FindChildTraverse('MainContents') : null; return ok(main) ? main : null; };" "const hostFor = row => { const main = ok(row) ? row.FindChildTraverse('MainContents') : null; return ok(main) ? main : row; };"
+run no-open-players-tab "	try { \$.DispatchEvent('Activated', tab); } catch (e) { /* */ }" ""
+run no-hideout-reset "			if (s.roster || s.escLatched || s.probe || s.collect || (s.party && (s.party.want || s.party.groups))) resetMatch(s);" ""
+run old-0.2.1-row-and-host-fallback "	const teams = root.FindChildrenWithClassTraverse('Team') || [];" "	const teams = (root.FindChildrenWithClassTraverse('Team') || []).length ? root.FindChildrenWithClassTraverse('Team') : [root];" "		const holder = ok(teams[t]) ? teams[t].FindChildTraverse('TeamEntries') : null;" "		const holder = ok(teams[t]) ? (teams[t].FindChildTraverse('TeamEntries') || teams[t]) : null;" "			if (ok(e) && typeOf(e) === ROW_TYPE) {" "			if (ok(e)) {" "const hostFor = row => { const main = ok(row) ? row.FindChildTraverse('MainContents') : null; return ok(main) ? main : null; };" "const hostFor = row => { const main = ok(row) ? row.FindChildTraverse('MainContents') : null; return ok(main) ? main : row; };"

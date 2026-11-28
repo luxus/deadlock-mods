@@ -5,6 +5,15 @@ notes from its section here.
 
 ## [Unreleased]
 
+## [0.2.3] - 2026-11-28
+
+### Fixed
+
+- Removed the 8,000-node JS DOM BFS in `findCards()` in favor of fast native `PlayerMenuContents` / `AccountID` lookups, eliminating the Escape-menu lag spike.
+- Eliminated repeated popup waves: single-pass probing (`PROBE_TRIES = 1`), zero inter-row delay, automatic `#PlayersTab` activation on first scan, immediate menu dismissal on completion or Esc close, and preserved `tries` across roster updates.
+- Reset cached match/party state when entering the Hideout and unload the hidden party-bridge `CitadelHTMLPanel` (`about:blank`) after receiving a result or timing out.
+- Updated `site/party/party.js` to also publish the result in `location.hash` for Panorama's `HTMLURLChanged` fallback and aligned `.LrBadge` (72x47 px) and `.LrPartyIcon` (22x22 px, `ignore-parent-flow: true`, `overflow: noclip`) styling.
+
 ## [0.2.2] - 2026-11-25
 
 ### Changed

@@ -38,6 +38,8 @@ class P {
 	Activate() { $.DispatchEvent('Activated', this); }
 	SetImage(url) { C.images++; this.img = url; }
 	SetURL(url) {
+		this.url = url;
+		if (url === 'about:blank') return;
 		if (url.indexOf('https://luxus.github.io/deadlock-mods/party/') === 0) {
 			H.partyUrls.push(url);
 			const q = new URLSearchParams(url.split('?')[1]);
@@ -178,8 +180,11 @@ H.openCard = entry => {
 	H.closeCards();
 	if (entry.cardId === null) return;
 	const layer = H.root.FindChild('ContextMenuLayer') || mk('Panel', H.root, 'ContextMenuLayer');
-	const card = mk('CitadelProfileCard', mk('Panel', layer, 'ContextMenu'), '');
-	H.cards.push(card.parent);
+	const menu = entry.bareCard
+		? mk('Panel', layer, 'ContextMenu')
+		: mk('CitadelContextMenuPlayer', layer, 'ContextMenu', 'PlayerMenuContents');
+	const card = mk('CitadelProfileCard', menu, entry.bareCard ? '' : 'ProfileCard');
+	H.cards.push(menu);
 	const delay = entry.cardDelay || 0;
 	const fill = () => {
 		const acc = mk('Panel', card, 'AccountID');
@@ -215,6 +220,8 @@ const buildWorld = (opts = {}) => {
 	if (opts.hideout) root.cls.add('connectedToHideout');
 	addEscape(root);
 	const dash = mk('CitadelHudEscapeMenu', root, 'Dashboard');
+	const tab = H.playersTab = mk('TabButton', dash, 'PlayersTab', 'FriendsOrPlayersButton');
+	tab.events.onactivate = () => tab.AddClass('selected');
 	const list = H.list = mk('CitadelPlayersList', dash, 'PlayersList');
 	const teams = mk('Panel', list, 'Teams');
 	const t1 = mk('Panel', teams, 'Team1', 'Team');

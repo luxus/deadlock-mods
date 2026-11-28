@@ -8,7 +8,8 @@ let fails = 0, passes = 0;
 const assert = (c, m) => { if (c) { passes++; return; } fails++; console.error('FAIL ' + m); };
 
 const js = fs.readFileSync(path.join(pak, 'panorama/scripts/lobby_ranks.js'), 'utf8');
-assert(js.includes("const VERSION = '0.2.2';"), 'script version 0.2.2');
+assert(js.includes("const VERSION = '0.2.3';"), 'script version 0.2.3');
+assert(js.includes("const PROBE_TRIES = 1;"), 'single-pass probing');
 assert(js.includes("try { $.Msg('LR-diag script-entry');"), 'script-entry is present');
 assert(js.includes("const RANKS_DEFAULT = true;"), 'ranks on by default');
 assert(js.includes('https://api.deadlock-api.com/v1/players'), 'public rank API host');
@@ -18,9 +19,13 @@ assert(!/HoppCX|Friends Rank|QoL Lite|deadlock-qol-mods/.test(js), 'script has n
 assert(!/function\s+getAccountId|function\s+addRank/.test(js), 'no qol-style function names');
 
 const css = fs.readFileSync(path.join(pak, 'panorama/styles/lobby_ranks.css'), 'utf8');
-assert(css.includes('.LrBadge'), 'CSS: .LrBadge');
+assert(css.includes('.LrBadge') && css.includes('width: 72px;'), 'CSS: .LrBadge 72px');
+assert(css.includes('ignore-parent-flow: true') && css.includes('overflow: noclip'), 'CSS: non-flow overlay with noclip');
 assert(css.includes('.LrProbe'), 'CSS: .LrProbe collapsed probes');
 assert(!css.includes('.vtex'), 'CSS: no texture urls (API images at runtime)');
+
+const partyJs = fs.readFileSync(path.join(root, '../../site/party/party.js'), 'utf8');
+assert(partyJs.includes('location.hash'), 'party bridge also writes result to location.hash');
 
 const list = fs.readFileSync(path.join(pak, 'panorama/layout/players_list.xml'), 'utf8');
 assert(list.includes('s2r://panorama/scripts/lobby_ranks.vjs_c'), 'list: script include');

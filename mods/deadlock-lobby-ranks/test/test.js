@@ -22,8 +22,8 @@ const badge = (row) => row && (row.FindChildTraverse('LrBadge'));
 start();
 assert(S.errors.length === 0, 'no errors at start: ' + S.errors.join(' | '));
 assert(/const RANKS_DEFAULT = true;/.test(SRC), 'Lobby ranks on by default');
-assert(S.info.some(m => /Deadlock Lobby Ranks: 0\.2\.2 loaded/.test(m)), 'console line 0.2.2 loaded: ' + S.info.join(' | '));
-assert(T().TICK_S === 1, 'tick is 1 Hz, not a frame poll');
+assert(S.info.some(m => /Deadlock Lobby Ranks: 0\.2\.3 loaded/.test(m)), 'console line 0.2.3 loaded: ' + S.info.join(' | '));
+assert(T().TICK_S === 1 && T().PROBE_TRIES === 1, 'tick is 1 Hz, single-pass probe');
 assert(!/0\.016/.test(SRC), 'no 0.016 s / ~60 Hz interval in the built script');
 assert(T().rankUrl('1234567') === 'https://api.deadlock-api.com/v1/players/1234567/rank/image?format=webp', 'rank image url');
 assert(T().rankUrl('nope') === '' && T().rankUrl('') === '', 'bad ids produce no url');
@@ -87,7 +87,8 @@ assert(badge(cardRow('Solo')) && badge(cardRow('Solo')).img.indexOf('4000003') >
 assert(badge(cardRow('Foe')) && badge(cardRow('Foe')).img.indexOf('4000004') >= 0, 'second team row resolved');
 assert(!cardRow('Mate').FindChildTraverse('LrBadge') || !shown(badge(cardRow('Mate'))), 'no card: no badge');
 assert(S.info.some(m => /LR-diag probe row=0:name=Kai try=1 card=found via=UserName\.accountid text="4000001" id=4000001/.test(m)), 'probe text logged: ' + S.info.filter(m => /probe/.test(m)).join(' | '));
-assert(S.info.some(m => /LR-diag probe row=0:name=Mate try=2 card=none/.test(m)), 'missing card retried once and logged');
+assert(S.info.some(m => /LR-diag probe row=0:name=Mate try=1 card=none/.test(m)), 'missing card tried once and logged');
+assert(!S.info.some(m => /LR-diag probe row=0:name=Mate try=2/.test(m)), 'missing card not retried a second time');
 assert(S.info.some(m => /sync entries=4 withAccount=3/.test(m)), 'sync line withAccount=3');
 assert(H.cards.length === 0, 'menus dismissed after probing');
 assert(H.clicks.some(c => c.ev === 'DismissAllContextMenus'), 'DismissAllContextMenus sent');
@@ -176,7 +177,7 @@ assert(!/hud_escape_menu/.test(fs.readFileSync(__dirname + '/../src/main.js', 'u
 }
 // stopping while a probe is in flight cancels probe and dismiss timers
 {
-	start({ wait: 0.02, entries: [{ name: 'Slow', hook: false, card: '4000009', cardDelay: 0.3 }] });
+	start({ wait: 0.1, entries: [{ name: 'Slow', hook: false, card: '4000009', cardDelay: 0.3 }] });
 	click('AddonSettingsButton'); advance(0.02);
 	click('LrMaster');
 	H.clicks = [];
@@ -185,10 +186,64 @@ assert(!/hud_escape_menu/.test(fs.readFileSync(__dirname + '/../src/main.js', 'u
 }
 // row hero changing while a probe is waiting discards the stale card id
 {
-	start({ wait: 0.02, entries: [{ name: 'Swap', hero: 'Haze', card: '5000001', cardDelay: 0.25 }] });
+	start({ wait: 0.1, entries: [{ name: 'Swap', hero: 'Haze', card: '5000001', cardDelay: 0.25 }] });
 	H.entries[0].FindChildTraverse('LrRowHero')._text = 'Abrams';
-	advance(0.4);
+	advance(0.6);
 	assert(S.info.some(m => /card=stale via=hero changed/.test(m)), 'async hero change discards stale probe result');
+}
+// findCards avoids full-DOM JS BFS
+{
+	start({ wait: 0.1, entries: [] });
+	for (let i = 0; i < 500; i++) S.mk('Panel', H.root, 'Junk' + i);
+	H.openCard({ cardId: '7777777' });
+	S.resetCounts();
+	const found = T().findCards();
+	assert(found.length === 1 && T().cardAccount(found[0]).id === '7777777', 'findCards finds PlayerMenuContents card');
+	assert(C.childReads <= 5, 'findCards does not JS-BFS full DOM (' + JSON.stringify(C) + ')');
+	H.openCard({ cardId: '7777778', bareCard: true });
+	const bare = T().findCards();
+	assert(bare.length === 1 && T().cardAccount(bare[0]).id === '7777778', 'findCards fallback finds AccountID card');
+}
+// PlayersTab switched once, cached replay on Esc reopen does zero probes, bridge resets to about:blank
+{
+	start({ partyReply: q => ({ ok: 1, g: [[7000001, 7000002]], c: 2 }), entries: [
+		{ name: 'A', card: '7000001' }, { name: 'B', card: '7000002' }
+	] });
+	advance(4);
+	assert(H.clicks.filter(c => c.id === 'PlayersTab' && c.ev === 'Activated').length === 1, 'PlayersTab activated once on first scan');
+	const br = byId('LrPartyBridge');
+	assert(H.partyUrls.length === 1 && br && br.url === 'about:blank', 'party bridge resets URL to about:blank after reply');
+	const probesBefore = H.clicks.filter(c => c.ev === 'Activated' && c.id === 'MainContents').length;
+	H.root.cls.delete('ShowEscapeMenu');
+	advance(2);
+	H.root.cls.add('ShowEscapeMenu');
+	advance(2);
+	const probesAfter = H.clicks.filter(c => c.ev === 'Activated' && c.id === 'MainContents').length;
+	assert(probesAfter === probesBefore, 'Esc reopen replays cached roster without re-probing');
+	assert(badge(H.entries[0]) && shown(badge(H.entries[0])), 'cached badge visible on Esc reopen');
+	// Hideout resets match & party state; leaving hideout re-scans cleanly
+	H.root.cls.add('connectedToHideout');
+	advance(1.5);
+	assert(H.entries.every(r => !badge(r) || !shown(badge(r))), 'hideout hides badges and resets match state');
+	assert(S.info.some(m => /match state reset/.test(m)), 'hideout logs match state reset');
+	H.root.cls.delete('connectedToHideout');
+	advance(4);
+	assert(H.partyUrls.length === 2, 'leaving hideout performs a fresh match scan and party request');
+}
+// closing Esc mid-probe aborts remaining rows and dismisses menu immediately
+{
+	start({ wait: 0.1, entries: [
+		{ name: 'SlowA', card: '6000001', cardDelay: 0.25 },
+		{ name: 'NextB', card: '6000002' }
+	] });
+	const probesAtAbort = H.clicks.filter(c => c.ev === 'Activated' && c.id === 'MainContents').length;
+	assert(probesAtAbort === 1, 'first row probe started before Esc close');
+	H.root.cls.delete('ShowEscapeMenu');
+	advance(2);
+	const probesAfterAbort = H.clicks.filter(c => c.ev === 'Activated' && c.id === 'MainContents').length;
+	assert(probesAfterAbort === 1, 'Esc close mid-probe aborts remaining rows: ' + probesAfterAbort);
+	assert(H.clicks.some(c => c.ev === 'DismissAllContextMenus'), 'Esc close mid-probe dismisses context menus');
+	assert(H.cards.length === 0, 'no context menu left open after abort');
 }
 
 console.log(passes + ' passed, ' + fails + ' failed');

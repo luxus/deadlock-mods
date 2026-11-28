@@ -1,5 +1,5 @@
-/* Deadlock Lobby Ranks — hidden account-id probes and a compact rank badge
-   in the Escape menu player list. Written from scratch. */
+/* Deadlock Lobby Ranks — hidden account-id probes, rank badges and party
+   markers in the Escape menu player list. Written from scratch. */
 
 .LrProbe {
 	visibility: collapse;
@@ -9,41 +9,51 @@
 	padding: 0px;
 }
 
-.LrBadge {
-	width: 30px;
-	height: 30px;
-	margin-left: 6px;
-	vertical-align: center;
-	horizontal-align: right;
+CitadelPlayersListEntry #MainContents {
+	overflow: noclip;
 }
 
 .LrRight {
 	horizontal-align: right;
-	vertical-align: center;
+	vertical-align: middle;
 	flow-children: right;
-	margin-right: 4px;
+	margin-right: 12px;
+	ignore-parent-flow: true;
+	overflow: noclip;
+	z-index: 10;
+}
+
+.LrBadge {
+	width: 72px;
+	height: 47px;
+	margin-left: 4px;
+	vertical-align: middle;
+	overflow: noclip;
 }
 
 .LrParty {
+	height: 24px;
 	flow-children: right;
-	vertical-align: center;
-	margin-right: 2px;
+	vertical-align: middle;
+	padding-left: 9px;
+	margin-right: 6px;
+	overflow: noclip;
 }
 
 .LrPartyIcon {
-	width: 12px;
-	height: 18px;
-	margin-right: -3px;
-	vertical-align: center;
+	width: 22px;
+	height: 22px;
+	margin-left: -9px;
+	vertical-align: middle;
 	wash-color: #ffffff;
 }
 
-.LrPartyC0 .LrPartyIcon { wash-color: #ff6b6b; }
-.LrPartyC1 .LrPartyIcon { wash-color: #4dabf7; }
-.LrPartyC2 .LrPartyIcon { wash-color: #69db7c; }
-.LrPartyC3 .LrPartyIcon { wash-color: #ffd43b; }
-.LrPartyC4 .LrPartyIcon { wash-color: #da77f2; }
-.LrPartyC5 .LrPartyIcon { wash-color: #ff922b; }
+.LrPartyC0 .LrPartyIcon { wash-color: #f2c94c; }
+.LrPartyC1 .LrPartyIcon { wash-color: #56ccf2; }
+.LrPartyC2 .LrPartyIcon { wash-color: #eb5757; }
+.LrPartyC3 .LrPartyIcon { wash-color: #6fcf97; }
+.LrPartyC4 .LrPartyIcon { wash-color: #bb6bd9; }
+.LrPartyC5 .LrPartyIcon { wash-color: #f2994a; }
 
 .LrPartyBridge {
 	width: 260px;

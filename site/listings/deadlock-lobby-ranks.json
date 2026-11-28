@@ -20,20 +20,20 @@
   ],
   "releaseHistoryUrl": "../history/deadlock-lobby-ranks.json",
   "release": {
-    "id": "0.2.2",
-    "contentRevision": "sha256-38c11538dbfcd816",
-    "version": "0.2.2",
+    "id": "0.2.3",
+    "contentRevision": "sha256-f9507b2496325e32",
+    "version": "0.2.3",
     "artifacts": [
       {
         "id": "lobby-ranks-zip",
-        "filename": "deadlock-lobby-ranks-0.2.2.zip",
+        "filename": "deadlock-lobby-ranks-0.2.3.zip",
         "format": "zip",
         "download": {
-          "url": "../files/deadlock-lobby-ranks-0.2.2.zip"
+          "url": "../files/deadlock-lobby-ranks-0.2.3.zip"
         },
-        "size": 33523,
+        "size": 34660,
         "hashes": {
-          "sha256": "38c11538dbfcd816d7445c4da59dfff2abbfffa8efcd810454e9f663dbc0cc66"
+          "sha256": "f9507b2496325e32e59c3c9183b6426c395252cc8e58298c1fce0d0c2185e9c5"
         }
       }
     ],
